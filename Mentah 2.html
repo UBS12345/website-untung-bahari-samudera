@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Penyaluran ABK</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+  
+  
+    /* Running text animation */
+    .marquee {
+      overflow: hidden;
+      white-space: nowrap;
+      box-sizing: border-box;
+    }
+    .marquee span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 15s linear infinite;
+    }
+    @keyframes marquee {
+      0%   { transform: translate(0, 0); }
+      100% { transform: translate(-100%, 0); }
+    }
+
+    /* Button hover with slight scale and shadow */
+    a.inline-block:hover, button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(255, 215, 0, 0.6);
+      transition: all 0.3s ease;
+    }
+    a.inline-block, button {
+      transition: all 0.3s ease;
+    }
+
+    /* Image zoom on hover */
+    img.hover-zoom:hover {
+      transform: scale(1.1);
+      transition: transform 0.4s ease;
+      box-shadow: 0 12px 25px rgba(255, 255, 255, 0.4);
+      border-color: #FACC15; /* yellow-400 */
+    }
+
+    /* Candidate card hover */
+    .candidate-card:hover {
+      background-color: #fbbf24; /* yellow-400 */
+      color: #1e40af; /* blue-900 */
+      transform: translateY(-10px);
+      box-shadow: 0 12px 25px rgba(251, 191, 36, 0.6);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    /* Gallery image hover */
+    .gallery-img:hover {
+      transform: scale(1.15);
+      box-shadow: 0 16px 30px rgba(251, 191, 36, 0.7);
+      transition: transform 0.4s ease;
+      cursor: pointer;
+    }
+
+    /* Chatbox styles */
+    #chatbox {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 320px;
+      max-width: 90vw;
+      background: rgba(255 255 255 / 0.95);
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 9999;
+    }
+    #chatbox header {
+      background-color: #fbbf24;
+      color: #1e40af;
+      padding: 12px 16px;
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    #chatbox .messages {
+      padding: 12px 16px;
+      height: 240px;
+      overflow-y: auto;
+      background: #fff;
+      font-size: 14px;
+      color: #333;
+    }
+    #chatbox .input-area {
+      display: flex;
+      border-top: 1px solid #ddd;
+    }
+    #chatbox input[type="text"] {
+      flex: 1;
+      border: none;
+      padding: 10px 12px;
+      font-size: 14px;
+      outline: none;
+    }
+    #chatbox button.send-btn {
+      background-color: #fbbf24;
+      border: none;
+      padding: 10px 16px;
+      cursor: pointer;
+      color: #1e40af;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    #chatbox button.send-btn:hover {
+      background-color: #d97706;
+      color: white;
+    }
+
+    /* Chat toggle button */
+    #chat-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #fbbf24;
+      color: #1e40af;
+      border: none;
+      border-radius: 50%;
+      width: 56px;
+      height: 56px;
+      font-size: 28px;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(251, 191, 36, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      transition: background-color 0.3s ease;
+    }
+    #chat-toggle:hover {
+      background-color: #d97706;
+      color: white;
+    }
+
+  </style>
+  
+  <style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
+</head>
+<body class="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 text-white font-sans">
+
+  <!-- Running Text -->
+  <div class="bg-yellow-400 text-blue-900 font-bold py-2 marquee">
+    <span>
+      🚢 Selamat datang di PT Bahari Untung Samudera - Penyaluran Tenaga Kerja Anak Buah Kapal Profesional & Cepat! &nbsp;&nbsp;&nbsp;
+      🌟 Daftar sekarang dan raih kesempatan kerja di industri maritim terbaik! &nbsp;&nbsp;&nbsp;
+      📞 Hubungi kami via WhatsApp untuk informasi lebih lanjut!
+    </span>
+  </div>
+<!-- Navigation Bar -->
+<nav class="bg-blue-900 text-yellow-400 px-6 py-4 shadow-lg sticky top-0 z-50">
+  <div class="container mx-auto flex justify-between items-center">
+    <h1 class="text-xl font-bold">PT Bahari Untung Samudera</h1>
+    <ul class="flex space-x-6 font-semibold">
+      <li><a href="#form" class="hover:text-white transition">Daftar</a></li>
+      <li><a href="#kandidat" class="hover:text-white transition">Kandidat</a></li>
+      <li><a href="#foto" class="hover:text-white transition">Galeri Foto</a></li>
+      <li><a href="#berangkat" class="hover:text-white transition">Akan Berangkat</a></li>
+    </ul>
+  </div>
+</nav>
+  <!-- Header -->
+  <header class="py-16 bg-gradient-to-r from-blue-800 via-blue-900 to-indigo-900">
+    <div class="container mx-auto flex flex-col md:flex-row items-center px-6 md:px-0">
+      <div class="md:w-1/2 space-y-6">
+        <h1 class="text-5xl font-extrabold leading-tight drop-shadow-lg">Penyaluran Tenaga Kerja Anak Buah Kapal</h1>
+        <p class="text-xl max-w-xl drop-shadow-md">Menghubungkan pelaut profesional dengan kesempatan kerja di industri maritim secara cepat dan terpercaya.</p>
+        <a href="#form" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-3 px-6 rounded shadow-lg transition">Daftar Sekarang</a>
+      </div>
+      <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center">
+        <img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\LOGO KE 2.jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+      </div>
+    </div>
+  </header>
+<!-- Tombol toggle chat -->
+<div id="whatsapp-toggle" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
+  <button style="background-color: #25D366; color: white; padding: 15px; border: none; border-radius: 50%; font-size: 24px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); cursor: pointer;">💬</button>
+</div>
+
+<!-- Chat Box WhatsApp -->
+<div id="whatsapp-chatbox" style="display: none; position: fixed; bottom: 80px; right: 20px; width: 300px; background: white; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.2); z-index: 9999; font-family: Arial, sans-serif;">
+  <div style="background-color: #25D366; color: white; padding: 12px 16px; font-weight: bold; border-top-left-radius: 12px; border-top-right-radius: 12px;">
+    Chat via WhatsApp
+    <span id="whatsapp-close" style="float: right; cursor: pointer;">×</span>
+  </div>
+  <div style="padding: 12px;">
+    <label for="wa-msg" style="font-size: 14px; color: #333;">Ketik Pesan:</label>
+    <input type="text" id="wa-msg" placeholder="Ketik pesan..." style="width: 100%; padding: 8px; margin-top: 6px; border: 1px solid #ccc; border-radius: 8px;color: Black;" />
+    <button onclick="sendToWhatsApp()" style="margin-top: 10px; background-color: #25D366; color: white; border: none; width: 100%; padding: 10px; border-radius: 8px; cursor: pointer;">Kirim Pesan</button>
+  </div>
+</div>
+  <script>
+  const waToggle = document.getElementById('whatsapp-toggle');
+  const waChatbox = document.getElementById('whatsapp-chatbox');
+  const waClose = document.getElementById('whatsapp-close');
+
+  waToggle.addEventListener('click', () => {
+    waChatbox.style.display = waChatbox.style.display === 'none' ? 'block' : 'none';
+  });
+
+  waClose.addEventListener('click', () => {
+    waChatbox.style.display = 'none';
+  });
+
+  function sendToWhatsApp() {
+    const msg = document.getElementById("wa-msg").value;
+    const phone = "6287861890665"; // Ganti dengan nomor WhatsApp kamu
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank');
+  }
+</script>
+  <!-- Login & Register Section -->
+  <section class="container mx-auto px-6 md:px-0 py-16 grid md:grid-cols-2 gap-12">
+
+    <!-- Login -->
+    <div class="bg-white bg-opacity-20 rounded-xl p-8 shadow-lg max-w-md mx-auto backdrop-blur-md border border-yellow-300">
+  <h2 class="text-3xl font-bold mb-6 text-center text-yellow-300 drop-shadow">Login ABK</h2>
+  <form action="login.php" method="POST" class="space-y-5">
+    <input 
+      type="email" 
+      name="login_email" 
+      placeholder="Email" 
+      class="w-full p-3 rounded border border-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 bg-white bg-opacity-10 text-black placeholder-gray" 
+      required 
+    />
+    <input 
+      type="password" 
+      name="login_password" 
+      placeholder="Password" 
+      class="w-full p-3 rounded border border-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 bg-white bg-opacity-10 text-black placeholder-gray" 
+      required 
+    />
+    <button 
+      type="submit" 
+      class="w-full bg-yellow-400 hover:bg-yellow-500 text-blue-900 py-3 rounded font-semibold transition">
+      Login
+    </button>
+  </form>
+</div>
+
+    <!-- Register -->
+    <div id="form" class="bg-white bg-opacity-20 rounded-xl p-8 shadow-lg max-w-md mx-auto backdrop-blur-md border border-yellow-300">
+      <h2 class="text-3xl font-bold mb-6 text-center text-yellow-300 drop-shadow">Form Pendaftaran Cepat</h2>
+      <form action="https://forms.gle/vGgBQa13CD9YuKCt5" target="_blank" enctype="multipart/form-data" class="space-y-5">
+        <input type="text" name="nama" placeholder="Nama" class="w-full p-3 rounded border border-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 bg-white bg-opacity-80 text-black"/>
+        <input type="email" name="email" placeholder="Email" class="w-full p-3 rounded border border-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 bg-white bg-opacity-80 text-black"/>
+        <input type="text" name="posisi" placeholder="Posisi yang Dilamar" class="w-full p-3 rounded border border-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 bg-white bg-opacity-80 text-black"/>
+        <label class="block text-yellow-300 font-semibold">
+          Upload CV
+          <input type="file" name="cv" class="w-full text-yellow-700 bg-white bg-opacity-80 rounded mt-1" accept=".pdf,.doc,.docx" />
+        </label>
+        <label class="block text-yellow-300 font-semibold">
+          Upload Sertifikat
+          <input type="file" name="sertifikat" class="w-full text-yellow-700 bg-white bg-opacity-80 rounded mt-1" accept=".pdf,.doc,.docx" />
+        </label>
+        <button type="submit" class="w-full bg-yellow-400 hover:bg-yellow-500 text-blue-900 py-3 rounded font-semibold transition">Kirim</button>
+		<div class="flex space-x-4">
+</div>
+  <button class="w-full bg-yellow-400 hover:bg-yellow-500 text-blue-900 py-3 rounded font-semibold transition text-center">
+  Isi Formulir Disini
+</button>
+      </form>
+    </div>
+
+  </section>
+
+  <!-- Posisi dan Persyaratan -->
+  <section class="bg-white bg-opacity-20 container mx-auto px-6 md:px-0 py-12 max-w-5xl rounded-lg shadow-lg border border-yellow-300 backdrop-blur-md">
+    <h2 class="text-3xl font-bold mb-8 text-center text-yellow-300 drop-shadow">Persyaratan Posisi</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="p-6 border rounded-lg shadow-lg hover:shadow-2xl transition bg-yellow-50 bg-opacity-30 border-yellow-300">
+        <h3 class="text-xl font-semibold mb-2 text-yellow-700">Pewira</h3>
+        <p class="text-yellow-900">Persyaratan dan kualifikasi untuk posisi ini meliputi pengalaman pelayaran, sertifikat keahlian, dan fisik yang prima.</p>
+      </div>
+      <div class="p-6 border rounded-lg shadow-lg hover:shadow-2xl transition bg-yellow-50 bg-opacity-30 border-yellow-300">
+        <h3 class="text-xl font-semibold mb-2 text-yellow-700">Juru Mudi</h3>
+        <p class="text-yellow-900">Menguasai navigasi dan memiliki pengalaman dalam mengemudikan kapal dengan baik dan aman.</p>
+      </div>
+      <div class="p-6 border rounded-lg shadow-lg hover:shadow-2xl transition bg-yellow-50 bg-opacity-30 border-yellow-300">
+        <h3 class="text-xl font-semibold mb-2 text-yellow-700">Kelasi</h3>
+        <p class="text-yellow-900">Memiliki pengetahuan teknis mesin kapal dan kemampuan kerja tim yang kuat.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kandidat -->
+  <section class="container mx-auto px-6 md:px-0 py-12 max-w-6xl">
+  <section id="kandidat" class="container mx-auto px-6 md:px-0 py-12 max-w-6xl">
+    <h2 class="text-3xl font-bold mb-10 text-center text-yellow-300 drop-shadow">Kandidat Terbaik</h2>
+    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div class="candidate-card bg-white bg-opacity-20 rounded-xl shadow-lg p-6 text-center border border-yellow-300 transition">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Hendra W." class="mx-auto rounded-full mb-4 border-4 border-yellow-400" />
+        <h3 class="font-semibold text-lg">Hendra W.</h3>
+        <p>Juru Mesin</p>
+      </div>
+      <div class="candidate-card bg-white bg-opacity-20 rounded-xl shadow-lg p-6 text-center border border-yellow-300 transition">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sari P." class="mx-auto rounded-full mb-4 border-4 border-yellow-400" />
+        <h3 class="font-semibold text-lg">Sari P.</h3>
+        <p>Perwira</p>
+      </div>
+      <div class="candidate-card bg-white bg-opacity-20 rounded-xl shadow-lg p-6 text-center border border-yellow-300 transition">
+        <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Budi T." class="mx-auto rounded-full mb-4 border-4 border-yellow-400" />
+        <h3 class="font-semibold text-lg">Budi T.</h3>
+        <p>Kelasi</p>
+      </div>
+      <div class="candidate-card bg-white bg-opacity-20 rounded-xl shadow-lg p-6 text-center border border-yellow-300 transition">
+        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Dewi K." class="mx-auto rounded-full mb-4 border-4 border-yellow-400" />
+        <h3 class="font-semibold text-lg">Dewi K.</h3>
+        <p>Juru Mudi</p>
+      </div>
+    </div>
+  </section>
+  
+<!-- ABK Akan Berangkat -->
+<section id="berangkat" class="container mx-auto px-6 md:px-0 py-12 max-w-6xl">
+  <h2 class="text-3xl font-bold mb-10 text-center text-yellow-300 drop-shadow">Daftar ABK yang Akan Berangkat</h2>
+  <div class="overflow-x-auto">
+    <table class="min-w-full bg-white bg-opacity-20 backdrop-blur-md rounded-lg border border-yellow-300 shadow-lg text-black">
+      <thead>
+        <tr class="bg-yellow-400 text-blue-900">
+          <th class="py-3 px-4 text-left">Nama</th>
+          <th class="py-3 px-4 text-left">Posisi</th>
+          <th class="py-3 px-4 text-left">Kapal</th>
+          <th class="py-3 px-4 text-left">Tanggal Berangkat</th>
+          <th class="py-3 px-4 text-left">Status ABK</th>
+        </tr>
+      </thead>
+      <tbody id="berangkatTableBody">
+        <tr class="hover:bg-yellow-100 hover:text-blue-900 transition">
+          <td class="py-2 px-4">Hendra W.</td>
+          <td class="py-2 px-4">Juru Mesin</td>
+          <td class="py-2 px-4">KM Nusantara 1</td>
+          <td class="py-2 px-4">15 Juni 2025</td>
+          <td class="py-2 px-4 text-black-400 font-semibold">SUDAH BERANGKAT</td>
+        </tr>
+        <tr class="hover:bg-yellow-100 hover:text-blue-900 transition">
+          <td class="py-2 px-4">Sari P.</td>
+          <td class="py-2 px-4">Pervira</td>
+          <td class="py-2 px-4">KM Bintang Laut</td>
+          <td class="py-2 px-4">-</td>
+          <td class="py-2 px-4 text-yellow-300 font-semibold">PROSES VISA</td>
+        </tr>
+		<tr class="hover:bg-yellow-100 hover:text-blue-900 transition">
+          <td class="py-2 px-4">Sari P.</td>
+          <td class="py-2 px-4">Pervira</td>
+          <td class="py-2 px-4">KM Bintang Laut</td>
+          <td class="py-2 px-4">-</td>
+          <td class="py-2 px-4 text-red-300 font-semibold">CANCEL</td>
+        </tr>
+		<tr class="hover:bg-yellow-100 hover:text-blue-900 transition">
+          <td class="py-2 px-4">Sari P.</td>
+          <td class="py-2 px-4">Pervira</td>
+          <td class="py-2 px-4">KM Bintang Laut</td>
+          <td class="py-2 px-4">06 Juni 2025</td>
+          <td class="py-2 px-4 text-green-300 font-semibold">AKAN DI BERANGKAT KAN</td>
+        </tr>
+        <!-- Tambah data lain di sini -->
+      </tbody>
+    </table>
+  </div>
+</section>
+
+  <!-- Galeri Foto -->
+  
+  <section id="foto" class="container mx-auto px-6 md:px-0 py-12 max-w-6xl">
+  <section class="container mx-auto px-6 md:px-0 py-12 max-w-6xl bg-yellow-400 rounded-lg shadow-lg border border-yellow-500">
+    <h2 class="text-3xl font-bold mb-10 text-center text-blue-900 drop-shadow">Galeri Foto</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
+      <img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (1).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (2).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (3).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (4).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (5).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (6).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (7).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (8).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (9).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (10).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (11).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (12).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (13).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (14).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (15).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (16).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (17).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (18).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (19).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (20).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (21).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (22).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (23).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (24).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (25).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (26).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (27).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (28).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (29).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (30).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (31).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (32).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (33).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (34).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (35).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (36).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (37).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (38).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (39).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (40).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (41).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (42).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (43).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (44).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (45).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (46).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (47).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (48).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (49).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (50).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (51).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (52).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (53).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (54).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (55).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (56).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (57).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (58).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (59).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (60).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (61).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (62).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (63).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (64).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (65).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (66).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (67).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (68).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (69).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (70).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (71).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (72).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (73).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (74).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (75).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (76).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (77).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (78).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (79).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (80).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (81).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (82).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (83).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (84).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (85).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (86).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (87).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (88).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (89).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (90).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+<img src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Convert foto\Foto Galeri (91).jpg" alt="ABK" class="rounded-lg shadow-xl border-4 border-yellow-400 hover-zoom" />
+</div>
+  </section>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-yellow-400 py-6 mt-12 text-center">
+    <p>© 2025 PT Bahari Untung Samudera - Semua hak cipta dilindungi.</p>
+  </footer>
+  
