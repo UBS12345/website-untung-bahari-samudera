@@ -791,6 +791,35 @@ function closeModal() {
     }
 
     const ctx = document.getElementById('crewChart')?.getContext('2d');
+if (ctx) {
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ["Master", "Chief Officer", "Second Officer", "Third Officer", "AB", "Chief Cook", "Chief Engineer", "2nd Engineer", "3rd Engineer", "4th Engineer", "Oiler", "Wiper", "Cadet Deck", "Cadet Engine", "Fetter", "Welding", "Translator", "Messboy"],
+      datasets: [{
+        label: 'Jumlah Crew',
+        data: [18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
+        backgroundColor: ['#facc15', '#fde68a', '#fcd34d', '#fbbf24', '#60a5fa', '#34d399', '#facc15', '#fde68a', '#fcd34d', '#fbbf24', '#60a5fa', '#34d399', '#facc15', '#fde68a', '#fcd34d', '#fbbf24', '#60a5fa', '#34d399'],
+        borderRadius: 8
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: true }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: { color: '#000' }
+        },
+        x: {
+          ticks: { color: '#000', maxRotation: 60, minRotation: 45 }
+        }
+      }
+    }
+  });
+}
     if (ctx) {
       new Chart(ctx, {
         type: 'bar',
