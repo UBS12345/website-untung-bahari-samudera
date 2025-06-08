@@ -1,15 +1,16 @@
 <!DOCTYPE html>
+
 <html lang="id">
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PT Bahari Untung Samudera</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <style>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>PT Bahari Untung Samudera</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+<style>
     html {
       scroll-behavior: smooth;
     }
@@ -80,92 +81,136 @@
       text-decoration: underline;
     }
   </style>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&amp;display=swap" rel="stylesheet"/>
+<style>
+      body { font-family: 'Poppins', sans-serif; }
+      h1, h2, h3, h4 { letter-spacing: 0.5px; }
+    </style>
 </head>
 <!-- CSS AOS -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
 <!-- JS AOS -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init();
 </script>
 <body>
+<style>
+  #scroll-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    background: #facc15;
+    z-index: 9999;
+  }
+</style>
+<div id="scroll-bar" style="width: 0%"></div>
+<script>
+  window.addEventListener('scroll', function() {
+    const scrollBar = document.getElementById('scroll-bar');
+    const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+    scrollBar.style.width = scrolled + "%";
+  });
+</script>
 
-<header class="relative overflow-hidden">
-  <div class="bg-blue-700 text-white text-sm flex flex-wrap justify-between items-center px-4 py-2 relative z-50">
-  <span class="whitespace-nowrap flex items-center text-white font-semibold text-sm">
-  <img src="LOGO KE 2.jpg" alt="Logo" class="h-6 mr-2 inline-block">
-  PT. Bahari Untung Samudera
-</span>
-  <div class="flex items-center flex-wrap gap-3 text-xs sm:text-sm">
-    <span class="flex items-center gap-1">
-      <i class="fas fa-phone-alt"></i>
-      <span>Contact us for more info!</span>
-    </span>
-    <span class="hidden sm:flex items-center gap-1">
-      Social Media:
-      <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
-      <a href="#" class="text-white"><i class="fab fa-facebook"></i></a>
-      <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
-      <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
-    </span>
-  </div>
-</div>
-  </div>
-  <div class="bg-white shadow-md">
-    <div class="container mx-auto flex justify-between items-center py-4 px-6">
-      <img src="LOGO KE 2.jpg" alt="Logo PT Bahari Untung Samudera" class="h-16 w-auto object-contain">
-      <nav class="hidden md:flex space-x-6 font-semibold z-50 relative">
-  <a href="#form" class="text-blue-900 hover:text-yellow-400">Home</a>
-  <a href="#visi-misi" class="text-blue-900 hover:text-yellow-400">Profil</a>
-  <a href="#jenis-kapal" class="text-blue-900 hover:text-yellow-400">Services</a>
-  <a href="#testimoni" class="text-blue-900 hover:text-yellow-400">Testimonial</a>
-  <a href="#blog" class="text-blue-900 hover:text-yellow-400">Blog</a>
-  <a href="#kontak" class="text-blue-900 hover:text-yellow-400">Contact</a>
-</nav>
-      <div class="md:hidden">
-  <button id="menuToggle" class="text-blue-900 text-2xl focus:outline-none">
-    <i class="fas fa-bars"></i>
+<div class="fixed top-4 right-4 z-50">
+<button class="bg-yellow-300 text-blue-900 font-bold px-4 py-2 rounded shadow hover:bg-yellow-400" id="toggleDarkMode">
+    🌙 Toggle Mode
   </button>
 </div>
-<div id="mobileMenu" class="hidden md:hidden absolute top-full left-0 w-full bg-white text-blue-900 shadow-lg z-50 px-6 py-4">
-  <a href="#form" class="block py-2 hover:text-yellow-500 font-semibold">Home</a>
-  <a href="#visi-misi" class="block py-2 hover:text-yellow-500 font-semibold">Profil</a>
-  <a href="#jenis-kapal" class="block py-2 hover:text-yellow-500 font-semibold">Services</a>
-  <a href="#testimoni" class="block py-2 hover:text-yellow-500 font-semibold">Testimonial</a>
-  <a href="#blog" class="block py-2 hover:text-yellow-500 font-semibold">Blog</a>
-  <a href="#kontak" class="block py-2 hover:text-yellow-500 font-semibold">Contact</a>
+<script>
+  document.getElementById('toggleDarkMode').addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+  });
+</script>
+<style>
+  .dark-mode {
+    background: #0f172a;
+    color: #facc15;
+  }
+  .dark-mode .bg-white {
+    background-color: #1e293b !important;
+  }
+  .dark-mode .text-blue-900 {
+    color: #facc15 !important;
+  }
+</style>
+<header class="relative overflow-hidden">
+<div class="bg-blue-700 text-white text-sm flex flex-wrap justify-between items-center px-4 py-2 relative z-50">
+<span class="whitespace-nowrap flex items-center text-white font-semibold text-sm">
+<img alt="Logo" class="h-6 mr-2 inline-block" src="LOGO KE 2.jpg"/>
+  PT. Bahari Untung Samudera
+</span>
+<div class="flex items-center flex-wrap gap-3 text-xs sm:text-sm">
+<span class="flex items-center gap-1">
+<i class="fas fa-phone-alt"></i>
+<span>Contact us for more info!</span>
+</span>
+<span class="hidden sm:flex items-center gap-1">
+      Social Media:
+      <a class="text-white" href="#"><i class="fab fa-instagram"></i></a>
+<a class="text-white" href="#"><i class="fab fa-facebook"></i></a>
+<a class="text-white" href="#"><i class="fab fa-linkedin"></i></a>
+<a class="text-white" href="#"><i class="fab fa-youtube"></i></a>
+</span>
 </div>
-    </div>
-  </div>
-
-  <div class="relative w-full h-96 overflow-hidden">
-  <div class="swiper-container w-full h-full">
-    <div class="swiper-wrapper">
-  <div class="swiper-slide">
- <img src="kapalbesar.jpg" class="w-full h-full object-cover transition-transform duration-1000 transform scale-105 auto=format&fit=crop&w=1920&q=80" />
-  </div>
-  <div class="swiper-slide">
-    <img src="kapalbesar1.jpg" class="w-full h-full object-cover transition-transform duration-1000 transform scale-105 auto=format&fit=crop&w=1920&q=80" />
-  </div>
-  <div class="swiper-slide">
-    <img src="kapalbesar2.jpg" class="w-full h-full object-cover transition-transform duration-1000 transform scale-105 auto=format&fit=crop&w=1920&q=80" />
-  </div>
 </div>
-      
-      
-    </div>
-    <div class="swiper-pagination"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-  </div>
-  <div class="absolute inset-0 bg-blue-900 bg-opacity-60 flex flex-col justify-center items-start text-white px-10 animate__animated animate__fadeInLeft space-y-4 z-10">
-    <h1 class="text-4xl md:text-5xl font-extrabold mb-3">PT. Bahari Untung Samudera</h1>
-    <p class="text-xl md:text-2xl font-light">International Crew Manning Agency</p>
-    <p class="mt-2 max-w-xl">We started operations in recruiting and placement of Indonesian seamen for national and foreign vessels to our Clients around Asia.</p>
-    <button onclick="document.getElementById('form').scrollIntoView({ behavior: 'smooth' })" class="mt-4 bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold px-6 py-3 rounded shadow-lg transition-transform transform hover:scale-105">Daftar Sekarang</button>
-  </div>
+<div class="bg-white shadow-md">
+<div class="container mx-auto flex justify-between items-center py-4 px-6">
+<img alt="Logo PT Bahari Untung Samudera" class="h-16 w-auto object-contain" src="LOGO KE 2.jpg"/>
+<nav class="hidden md:flex space-x-6 font-semibold z-50 relative">
+<a class="text-blue-900 hover:text-yellow-400" href="#form">Home</a>
+<a class="text-blue-900 hover:text-yellow-400" href="#visi-misi">Profil</a>
+<a class="text-blue-900 hover:text-yellow-400" href="#jenis-kapal">Services</a>
+<a class="text-blue-900 hover:text-yellow-400" href="#testimoni">Testimonial</a>
+<a class="text-blue-900 hover:text-yellow-400" href="#blog">Blog</a>
+<a class="text-blue-900 hover:text-yellow-400" href="#kontak">Contact</a>
+</nav>
+<div class="md:hidden">
+<button class="text-blue-900 text-2xl focus:outline-none" id="menuToggle">
+<i class="fas fa-bars"></i>
+</button>
 </div>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<div class="hidden md:hidden absolute top-full left-0 w-full bg-white text-blue-900 shadow-lg z-50 px-6 py-4" id="mobileMenu">
+<a class="block py-2 hover:text-yellow-500 font-semibold" href="#form">Home</a>
+<a class="block py-2 hover:text-yellow-500 font-semibold" href="#visi-misi">Profil</a>
+<a class="block py-2 hover:text-yellow-500 font-semibold" href="#jenis-kapal">Services</a>
+<a class="block py-2 hover:text-yellow-500 font-semibold" href="#testimoni">Testimonial</a>
+<a class="block py-2 hover:text-yellow-500 font-semibold" href="#blog">Blog</a>
+<a class="block py-2 hover:text-yellow-500 font-semibold" href="#kontak">Contact</a>
+</div>
+</div>
+</div>
+<div class="relative w-full h-96 overflow-hidden">
+<video autoplay="" class="absolute w-full h-full object-cover z-0" loop="" muted="" playsinline="">
+<source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4"/>
+</video>
+<div class="swiper-container w-full h-full">
+<div class="swiper-wrapper">
+<div class="swiper-slide">
+<img class="w-full h-full object-cover transition-transform duration-1000 transform scale-105 auto=format&amp;fit=crop&amp;w=1920&amp;q=80" src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Foto - Foto\kapalbesar.jpg"/>
+</div>
+<div class="swiper-slide">
+<img class="w-full h-full object-cover transition-transform duration-1000 transform scale-105 auto=format&amp;fit=crop&amp;w=1920&amp;q=80" src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Foto - Foto\kapalbesar1.jpg"/>
+</div>
+<div class="swiper-slide">
+<img class="w-full h-full object-cover transition-transform duration-1000 transform scale-105 auto=format&amp;fit=crop&amp;w=1920&amp;q=80" src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Foto - Foto\kapalbesar2.jpg"/>
+</div>
+</div>
+</div>
+<div class="swiper-pagination"></div>
+<div class="swiper-button-prev"></div>
+<div class="swiper-button-next"></div>
+</div>
+<div class="absolute inset-0 bg-blue-900 bg-opacity-60 flex flex-col justify-center items-start text-white px-10 animate__animated animate__fadeInLeft space-y-4 z-10">
+<h1 class="text-4xl md:text-5xl font-extrabold mb-3">PT. Bahari Untung Samudera</h1>
+<p class="text-xl md:text-2xl font-light">International Crew Manning Agency</p>
+<p class="mt-2 max-w-xl">We started operations in recruiting and placement of Indonesian seamen for national and foreign vessels to our Clients around Asia.</p>
+<button class="animate-bounce bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold px-6 py-3 rounded shadow-lg transition hover:scale-105" onclick="document.getElementById('form').scrollIntoView({ behavior: 'smooth' })">🚀 Daftar Sekarang</button>
+</div>
+<link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet"/>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
   new Swiper('.swiper-container', {
@@ -186,7 +231,6 @@
     }
   });
 </script>
-</div>
 <script>
   // Removed slider background script because video is now used as hero background.
 
@@ -196,222 +240,252 @@
     navbar.classList.toggle("py-4", window.scrollY <= 10);
   });
 </script>
-  </div>
 </header>
-
 <!-- Chatbox Button -->
 <div class="chatbox-button" onclick="toggleChatbox()">
-  <i class="fas fa-comment-dots text-blue-900 text-xl"></i>
+<i class="fas fa-comment-dots text-blue-900 text-xl"></i>
 </div>
-
 <!-- Chatbox Panel -->
-<div id="chatbox-panel" class="chatbox-panel">
-  <a href="https://wa.me/6281234567890" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-  <a href="mailto:Teambuss57@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-  <a href="https://www.wechat.com/" target="_blank"><i class="fab fa-weixin"></i> WeChat</a>
+<div class="chatbox-panel" id="chatbox-panel">
+<a href="https://wa.me/6281234567890" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+<a href="mailto:Teambuss57@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+<a href="https://www.wechat.com/" target="_blank"><i class="fab fa-weixin"></i> WeChat</a>
 </div>
-
 <!-- Running Text Interaktif -->
 <div class="marquee">
-  <div class="track">
-    <div class="item">🚢 Selamat datang di <strong>PT Bahari Untung Samudera</strong>!</div>
-    <div class="item">🌊 Penyaluran Tenaga Kerja ABK cepat, terpercaya & profesional</div>
-    <div class="item">📞 Klik tombol WhatsApp untuk info langsung dari admin kami!</div>
-    <div class="item">✨ Daftar sekarang & wujudkan karier maritim impian Anda!</div>
-  </div>
+<div class="track">
+<div class="item">🚢 Selamat datang di <strong>PT Bahari Untung Samudera</strong>!</div>
+<div class="item">🌊 Penyaluran Tenaga Kerja ABK cepat, terpercaya &amp; profesional</div>
+<div class="item">📞 Klik tombol WhatsApp untuk info langsung dari admin kami!</div>
+<div class="item">✨ Daftar sekarang &amp; wujudkan karier maritim impian Anda!</div>
 </div>
-
+</div>
 <!-- Include External Sections -->
 <div id="form-login-struktur-dll">
-  <!-- Form Pendaftaran -->
-  <section id="form" class="py-12 px-6 container mx-auto max-w-3xl" data-aos="fade-up">
-    <h2 class="text-3xl font-bold mb-6 text-yellow-300 text-center">Formulir Pendaftaran ABK</h2>
-    <form class="bg-white bg-opacity-10 p-6 rounded-xl shadow-lg backdrop-blur-md border border-yellow-300 space-y-4">
-      <input type="text" placeholder="Nama Lengkap" class="w-full p-3 rounded bg-white bg-opacity-80 text-black" />
-      <input type="email" placeholder="Email" class="w-full p-3 rounded bg-white bg-opacity-80 text-black" />
-      <input type="text" placeholder="Posisi yang Dilamar" class="w-full p-3 rounded bg-white bg-opacity-80 text-black" />
-      <input type="file" class="w-full p-3 rounded bg-white bg-opacity-80 text-black" />
-      <button type="submit" class="w-full bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-3 px-6 rounded transition-transform transform hover:scale-105">Kirim</button>
-    </form>
-  </section>
-
-  <!-- Form Login -->
-  <section id="login" class="py-12 px-6 container mx-auto max-w-3xl" data-aos="fade-up">
-    <h2 class="text-3xl font-bold mb-6 text-yellow-300 text-center">Login ABK</h2>
-    <form class="bg-white bg-opacity-10 p-6 rounded-xl shadow-lg backdrop-blur-md border border-yellow-300 space-y-4">
-      <input type="email" placeholder="Email" class="w-full p-3 rounded bg-white bg-opacity-80 text-black" />
-      <input type="password" placeholder="Password" class="w-full p-3 rounded bg-white bg-opacity-80 text-black" />
-      <button type="submit" class="w-full bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-3 px-6 rounded">Login</button>
-    </form>
-  </section>
-
-  <!-- Visi Misi -->
-  <section id="visi-misi" class="container mx-auto px-6 py-12 bg-fixed bg-center bg-cover" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1470&q=80');" data-aos="fade-up">
-    <h2 class="text-3xl font-bold text-red-400 text-center mb-12">Visi & Misi</h2>
-    <div class="grid md:grid-cols-2 gap-6">
-      <div class="bg-white bg-opacity-10 p-6 rounded-lg border border-yellow-300">
-        <h3 class="text-xl font-bold text-red-400 text-center mb-2">Visi</h3>
-		<h3 class="text-xl font-bold text-red-400 text-center mb-2"><p>MENJADIKAN PERUSAHAAN PELAYARAN TERKEMUKA DI ASIA</p></h3>
-      </div>
-      <div class="bg-white bg-opacity-10 p-6 rounded-lg border border-yellow-300">
-        <h3 class="text-xl font-bold text-red-400 text-center mb-2">Misi</h3>
-		<h3 class="text-xl font-bold text-red-400 text-center mb-2"><p>1. MENGUTAMAKAN KUALITAS DAN PELAYANAN YANG LEBIH BAIK</p>
-<p>2. MENERAPKAN CREW STANDAR NASIONAL YANG TERSERTIFIKASI</p>
-<p>3. MENINGKATKAN NILAI PERUSAHAAN DENGAN INOVASI, DIGITALISASI PROSES BISNIS, DAN PENGEMBANGAN SUMBER DAYA MANUSIA</p>
-<p>4. MENERAPKAN PRINSIP CORPORATE GOVERNANCE</p>
-<p>5. BERKONTRIBUSI POSITIF DAN BERPERAN AKTIF TERHADAP KARYAWAN DAN CREW PELAYARAN</p></h3>
-        
-      </div>
-    </div>
-  </section>
-
+<!-- Form Pendaftaran -->
+<section class="py-12 px-6 container mx-auto max-w-3xl" data-aos="fade-up" id="form">
+<h2 class="text-3xl font-bold mb-6 text-yellow-300 text-center">Formulir Pendaftaran ABK</h2>
+<form class="bg-white bg-opacity-10 p-6 rounded-xl shadow-lg backdrop-blur-md border border-yellow-300 space-y-4">
+<input class="w-full p-3 rounded bg-white bg-opacity-80 text-black" placeholder="Nama Lengkap" type="text"/>
+<input class="w-full p-3 rounded bg-white bg-opacity-80 text-black" placeholder="Email" type="email"/>
+<input class="w-full p-3 rounded bg-white bg-opacity-80 text-black" placeholder="Posisi yang Dilamar" type="text"/>
+<input accept=".pdf,.doc,.docx" class="w-full p-3 rounded bg-white bg-opacity-80 text-black f i l e : m r - 2 f i l e : b g - y e l l o w - 3 0 0 f i l e : t e x t - b l u e - 9 0 0" required="required" type="file"/>
+<button class="w-full bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-3 px-6 rounded transition-transform transform hover:scale-105" type="submit">Kirim</button>
+</form>
+</section>
+<div class="w-full overflow-hidden">
+<svg viewbox="0 0 1440 320"><path d="M0,160L1440,320L1440,0L0,0Z" fill="#0f172a" fill-opacity="1"></path></svg>
+</div>
+<!-- Form Login -->
+<section class="py-12 px-6 container mx-auto max-w-3xl" data-aos="fade-up" id="login">
+<h2 class="text-3xl font-bold mb-6 text-yellow-300 text-center">Login ABK</h2>
+<form class="bg-white bg-opacity-10 p-6 rounded-xl shadow-lg backdrop-blur-md border border-yellow-300 space-y-4">
+<input class="w-full p-3 rounded bg-white bg-opacity-80 text-black" placeholder="Email" type="email"/>
+<input class="w-full p-3 rounded bg-white bg-opacity-80 text-black" placeholder="Password" type="password"/>
+<button class="w-full bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-3 px-6 rounded" type="submit">Login</button>
+</form>
+<div class="mt-4 p-4 bg-white bg-opacity-10 rounded border border-yellow-300 text-white hidden" id="statusMessage">
+<p class="font-bold text-yellow-300">Status Crew:</p>
+<ul class="list-disc list-inside text-sm mt-2">
+<li>Email: <span id="crewEmail">-</span></li>
+<li>Posisi: Deck Cadet</li>
+<li>Status: PROSES MCU</li>
+</ul>
+</div>
+<script>
+      const loginForm = document.querySelector('#login form');
+      loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = loginForm.querySelector('input[type="email"]').value;
+        document.getElementById('crewEmail').textContent = email;
+        document.getElementById('statusMessage').classList.remove('hidden');
+      });
+    </script>
+</section>
+<div class="w-full overflow-hidden">
+<svg viewbox="0 0 1440 320"><path d="M0,160L1440,320L1440,0L0,0Z" fill="#0f172a" fill-opacity="1"></path></svg>
+</div>
+<!-- Visi Misi -->
+<div class="w-full overflow-hidden">
+<svg viewbox="0 0 1440 320">
+<path d="M0,160L1440,320L1440,0L0,0Z" fill="#0f172a" fill-opacity="1"></path>
+</svg>
+</div>
+<div class="relative w-full">
+<img alt="Background" class="w-full h-full object-cover absolute inset-0 z-0" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&amp;fit=crop&amp;w=1920&amp;q=80"/>
+<div class="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
+<div class="relative z-20 px-4 py-10 md:px-10 text-white">
+<section class="container mx-auto px-6 py-12 bg-fixed bg-center bg-cover" data-aos="fade-up" data-aos-duration="1000" id="visi-misi" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&amp;fit=crop&amp;w=1470&amp;q=80');">
+<h2 class="text-4xl font-extrabold text-yellow-300 text-center mb-10">Visi &amp; Misi</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="p-6 backdrop-blur-lg bg-white bg-opacity-10 border border-yellow-300 rounded-xl shadow-lg transition-transform hover:scale-105">
+<h3 class="text-xl font-bold text-yellow-300 flex items-center gap-2 mb-3">
+<i class="fas fa-eye"></i> Visi
+            </h3>
+<p class="text-white">Menjadi perusahaan pelayaran <strong>terkemuka di Asia</strong>.</p>
+</div>
+<div class="p-6 backdrop-blur-lg bg-white bg-opacity-10 border border-yellow-300 rounded-xl shadow-lg transition-transform hover:scale-105">
+<h3 class="text-xl font-bold text-yellow-300 flex items-center gap-2 mb-3">
+<i class="fas fa-bullseye"></i> Misi
+            </h3>
+<ul class="list-disc list-inside text-white space-y-2 text-sm">
+<li>Mengutamakan <strong>kualitas</strong> dan pelayanan terbaik</li>
+<li>Menerapkan crew standar nasional yang <strong>tersrtifikasi</strong></li>
+<li>Meningkatkan nilai perusahaan dengan <strong>inovasi</strong> &amp; digitalisasi</li>
+<li>Menerapkan prinsip <strong>corporate governance</strong></li>
+<li>Berkontribusi positif &amp; aktif terhadap crew &amp; karyawan</li>
+</ul>
+</div>
+</div>
+</section>
+</div>
+</div>
+<div class="w-full overflow-hidden">
+<svg viewbox="0 0 1440 320"><path d="M0,160L1440,320L1440,0L0,0Z" fill="#0f172a" fill-opacity="1"></path></svg>
+</div>
 <!-- Jenis Kapal -->
-<section id="jenis-kapal" class="container mx-auto px-6 py-12" data-aos="fade-up">
-  <div class="text-center mb-6">
-    <button onclick="filterKapal('all')" class="px-4 py-2 m-1 bg-yellow-400 text-blue-900 font-bold rounded hover:bg-yellow-500">Semua</button>
-    <button onclick="filterKapal('cargo')" class="px-4 py-2 m-1 bg-yellow-400 text-blue-900 font-bold rounded hover:bg-yellow-500">Cargo</button>
-    <button onclick="filterKapal('tanker')" class="px-4 py-2 m-1 bg-yellow-400 text-blue-900 font-bold rounded hover:bg-yellow-500">Tanker</button>
-    <button onclick="filterKapal('penumpang')" class="px-4 py-2 m-1 bg-yellow-400 text-blue-900 font-bold rounded hover:bg-yellow-500">Penumpang</button>
-    <button onclick="filterKapal('support')" class="px-4 py-2 m-1 bg-yellow-400 text-blue-900 font-bold rounded hover:bg-yellow-500">Support</button>
-  </div>
-
-  <h2 class="text-3xl font-bold text-yellow-300 text-center mb-10">Jenis Kapal yang Didukung</h2>
-
-  <div id="kapalGrid" class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-    <!-- Kartu 1 -->
-    <div class="bg-white text-black rounded-lg shadow-lg overflow-hidden kapal-card" data-kategori="cargo" data-aos="zoom-in">
-      <img src="cargo ship.jpg" alt="Container Ship" class="w-full h-48 object-cover transition duration-300 ease-in-out transform hover:scale-105 hover:saturate-150 hover:brightness-110 rounded-t-lg">
-      <div class="p-4 transition duration-300 hover:bg-yellow-50 hover:text-blue-900">
-        <h3 class="text-xl font-bold mb-2">Container Ship</h3>
-        <p class="text-sm mb-4">We provide highly skilled personnel to manage the complexities of containerized cargo shipping.</p>
-        <a href="#kontak" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Contact Us</a>
-      </div>
-    </div>
-
-    <!-- Kartu 2 sampai 7 -->
-    <div class="bg-white text-black rounded-lg shadow-lg overflow-hidden" data-aos="zoom-in">
-      <img src="bulk carier.jpg" alt="Container Ship" class="w-full h-48 object-cover transition duration-300 ease-in-out transform hover:scale-105 hover:saturate-150 hover:brightness-110 rounded-t-lg">
-      <div class="p-4">
-        <h3 class="text-xl font-bold mb-2">Bulk Carrier</h3>
-        <p class="text-sm mb-4">Our team supplies experienced crew for bulk carriers, handling the transportation of commodities.</p>
-        <a href="#kontak" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Contact Us</a>
-      </div>
-    </div>
-
-    <div class="bg-white text-black rounded-lg shadow-lg overflow-hidden" data-aos="zoom-in">
-<img src="Cement caier.jpg" alt="Container Ship" class="w-full h-48 object-cover transition duration-300 ease-in-out transform hover:scale-105 hover:saturate-150 hover:brightness-110 rounded-t-lg">
-      <div class="p-4">
-        <h3 class="text-xl font-bold mb-2">Cement Carrier</h3>
-        <p class="text-sm mb-4">We ensure safe handling and transportation of these essential construction materials.</p>
-        <a href="#kontak" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Contact Us</a>
-      </div>
-    </div>
-
-    <div class="bg-white text-black rounded-lg shadow-lg overflow-hidden" data-aos="zoom-in">
-<img src="oil tanker ship.jpg" alt="Container Ship" class="w-full h-48 object-cover transition duration-300 ease-in-out transform hover:scale-105 hover:saturate-150 hover:brightness-110 rounded-t-lg">
-      <div class="p-4">
-        <h3 class="text-xl font-bold mb-2">Oil Tanker</h3>
-        <p class="text-sm mb-4">Our team is equipped to manage the demanding operational requirements of oil tankers.</p>
-        <a href="#kontak" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Contact Us</a>
-      </div>
-    </div>
-
-    <div class="bg-white text-black rounded-lg shadow-lg overflow-hidden" data-aos="zoom-in">
-<img src="chemical ship.jpg" alt="Container Ship" class="w-full h-48 object-cover transition duration-300 ease-in-out transform hover:scale-105 hover:saturate-150 hover:brightness-110 rounded-t-lg">
-      <div class="p-4">
-        <h3 class="text-xl font-bold mb-2">Chemical Tanker</h3>
-        <p class="text-sm mb-4">We provide specialized crews for chemical tankers, with a focus on safety and precision.</p>
-        <a href="#kontak" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Contact Us</a>
-      </div>
-    </div>
-
-    <div class="bg-white text-black rounded-lg shadow-lg overflow-hidden" data-aos="zoom-in">
-<img src="passenger ship.jpg" alt="Container Ship" class="w-full h-48 object-cover transition duration-300 ease-in-out transform hover:scale-105 hover:saturate-150 hover:brightness-110 rounded-t-lg">
-      <div class="p-4">
-        <h3 class="text-xl font-bold mb-2">Passenger Ship</h3>
-        <p class="text-sm mb-4">Our team offers exceptional hospitality and safety services for passenger vessels.</p>
-        <a href="#kontak" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Contact Us</a>
-      </div>
-    </div>
-
-    <div class="bg-white text-black rounded-lg shadow-lg overflow-hidden" data-aos="zoom-in">
-<img src="tugboat.jpg" alt="Container Ship" class="w-full h-48 object-cover transition duration-300 ease-in-out transform hover:scale-105 hover:saturate-150 hover:brightness-110 rounded-t-lg">
-      <div class="p-4">
-        <h3 class="text-xl font-bold mb-2">Tugboat</h3>
-        <p class="text-sm mb-4">Our crew is experienced in tugboat operations, providing support to maneuver large vessels in port.</p>
-        <a href="#kontak" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Contact Us</a>
-      </div>
-    </div>
-  </div>
+<section class="container mx-auto px-6 py-12" data-aos="fade-up" id="jenis-kapal">
+<div class="text-center mb-6">
+<button class="px-4 py-2 m-1 bg-yellow-400 text-blue-900 font-bold rounded hover:bg-yellow-500" onclick="filterKapal('all')">Semua</button>
+<button class="px-4 py-2 m-1 bg-yellow-400 text-blue-900 font-bold rounded hover:bg-yellow-500" onclick="filterKapal('cargo')">Cargo</button>
+<button class="px-4 py-2 m-1 bg-yellow-400 text-blue-900 font-bold rounded hover:bg-yellow-500" onclick="filterKapal('tanker')">Tanker</button>
+<button class="px-4 py-2 m-1 bg-yellow-400 text-blue-900 font-bold rounded hover:bg-yellow-500" onclick="filterKapal('penumpang')">Penumpang</button>
+<button class="px-4 py-2 m-1 bg-yellow-400 text-blue-900 font-bold rounded hover:bg-yellow-500" onclick="filterKapal('support')">Support</button>
+</div>
+<h2 class="text-3xl font-bold text-yellow-300 text-center mb-10">Jenis Kapal yang Didukung</h2>
+<div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="kapalGrid">
+<!-- Kartu 1 -->
+<div class="bg-white text-black rounded-lg shadow-lg overflow-hidden kapal-card" data-aos="zoom-in" data-kategori="cargo">
+<img alt="Container Ship" class="w-full h-48 object-cover transition duration-300 ease-in-out transform hover:scale-105 hover:saturate-150 hover:brightness-110 rounded-t-lg" src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Foto - Foto\cargo ship.jpg"/>
+<div class="p-4 transition duration-300 hover:bg-yellow-50 hover:text-blue-900">
+<h3 class="text-xl font-bold mb-2">Container Ship</h3>
+<p class="text-sm mb-4">We provide highly skilled personnel to manage the complexities of containerized cargo shipping.</p>
+<a class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" href="#kontak">Contact Us</a>
+</div>
+</div>
+<!-- Kartu 2 sampai 7 -->
+<div class="bg-white text-black rounded-lg shadow-lg overflow-hidden" data-aos="zoom-in">
+<img alt="Container Ship" class="w-full h-48 object-cover transition duration-300 ease-in-out transform hover:scale-105 hover:saturate-150 hover:brightness-110 rounded-t-lg" src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Foto - Foto\bulk carier.jpg"/>
+<div class="p-4">
+<h3 class="text-xl font-bold mb-2">Bulk Carrier</h3>
+<p class="text-sm mb-4">Our team supplies experienced crew for bulk carriers, handling the transportation of commodities.</p>
+<a class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" href="#kontak">Contact Us</a>
+</div>
+</div>
+<div class="bg-white text-black rounded-lg shadow-lg overflow-hidden" data-aos="zoom-in">
+<img alt="Container Ship" class="w-full h-48 object-cover transition duration-300 ease-in-out transform hover:scale-105 hover:saturate-150 hover:brightness-110 rounded-t-lg" src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Foto - Foto\Cement caier.jpg"/>
+<div class="p-4">
+<h3 class="text-xl font-bold mb-2">Cement Carrier</h3>
+<p class="text-sm mb-4">We ensure safe handling and transportation of these essential construction materials.</p>
+<a class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" href="#kontak">Contact Us</a>
+</div>
+</div>
+<div class="bg-white text-black rounded-lg shadow-lg overflow-hidden" data-aos="zoom-in">
+<img alt="Container Ship" class="w-full h-48 object-cover transition duration-300 ease-in-out transform hover:scale-105 hover:saturate-150 hover:brightness-110 rounded-t-lg" src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Foto - Foto\oil tanker ship.jpg"/>
+<div class="p-4">
+<h3 class="text-xl font-bold mb-2">Oil Tanker</h3>
+<p class="text-sm mb-4">Our team is equipped to manage the demanding operational requirements of oil tankers.</p>
+<a class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" href="#kontak">Contact Us</a>
+</div>
+</div>
+<div class="bg-white text-black rounded-lg shadow-lg overflow-hidden" data-aos="zoom-in">
+<img alt="Container Ship" class="w-full h-48 object-cover transition duration-300 ease-in-out transform hover:scale-105 hover:saturate-150 hover:brightness-110 rounded-t-lg" src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Foto - Foto\chemical ship.jpg"/>
+<div class="p-4">
+<h3 class="text-xl font-bold mb-2">Chemical Tanker</h3>
+<p class="text-sm mb-4">We provide specialized crews for chemical tankers, with a focus on safety and precision.</p>
+<a class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" href="#kontak">Contact Us</a>
+</div>
+</div>
+<div class="bg-white text-black rounded-lg shadow-lg overflow-hidden" data-aos="zoom-in">
+<img alt="Container Ship" class="w-full h-48 object-cover transition duration-300 ease-in-out transform hover:scale-105 hover:saturate-150 hover:brightness-110 rounded-t-lg" src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Foto - Foto\passenger ship.jpg"/>
+<div class="p-4">
+<h3 class="text-xl font-bold mb-2">Passenger Ship</h3>
+<p class="text-sm mb-4">Our team offers exceptional hospitality and safety services for passenger vessels.</p>
+<a class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" href="#kontak">Contact Us</a>
+</div>
+</div>
+<div class="bg-white text-black rounded-lg shadow-lg overflow-hidden" data-aos="zoom-in">
+<img alt="Container Ship" class="w-full h-48 object-cover transition duration-300 ease-in-out transform hover:scale-105 hover:saturate-150 hover:brightness-110 rounded-t-lg" src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Foto - Foto\tugboat.jpg"/>
+<div class="p-4">
+<h3 class="text-xl font-bold mb-2">Tugboat</h3>
+<p class="text-sm mb-4">Our crew is experienced in tugboat operations, providing support to maneuver large vessels in port.</p>
+<a class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" href="#kontak">Contact Us</a>
+</div>
+</div>
+</div>
 </section>
-
+<div class="w-full overflow-hidden">
+<svg viewbox="0 0 1440 320"><path d="M0,160L1440,320L1440,0L0,0Z" fill="#0f172a" fill-opacity="1"></path></svg>
+</div>
 <!-- Modal Image Preview -->
-<div id="modalPreview" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden z-50">
-  <div class="bg-white rounded-lg p-4 max-w-2xl w-full relative text-center">
-    <button onclick="closeModal()" class="absolute top-2 right-2 text-black font-bold text-xl">&times;</button>
-    <img id="modalImg" src="" alt="" class="w-full rounded max-h-[70vh] object-contain" />
-    <p id="modalCaption" class="text-black mt-4 font-semibold"></p>
-    <div class="mt-4 flex justify-between">
-      <button onclick="prevModalImage()" class="text-blue-900 font-bold text-lg">&#10094; Prev</button>
-      <button onclick="nextModalImage()" class="text-blue-900 font-bold text-lg">Next &#10095;</button>
-    </div>
-  </div>
+<div class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden z-50" id="modalPreview">
+<div class="bg-white rounded-lg p-4 max-w-2xl w-full relative text-center">
+<button class="absolute top-2 right-2 text-black font-bold text-xl" onclick="closeModal()">×</button>
+<img alt="" class="w-full rounded max-h-[70vh] object-contain" id="modalImg" src=""/>
+<p class="text-black mt-4 font-semibold" id="modalCaption"></p>
+<div class="mt-4 flex justify-between">
+<button class="text-blue-900 font-bold text-lg" onclick="prevModalImage()">❮ Prev</button>
+<button class="text-blue-900 font-bold text-lg" onclick="nextModalImage()">Next ❯</button>
 </div>
 </div>
-<section id="struktur" class="container mx-auto px-6 py-12 animate__animated animate__fadeInUp" data-aos="fade-up">
-  <h2 class="text-3xl font-bold text-yellow-300 text-center mb-10">Struktur Organisasi</h2>
-  <div class="grid md:grid-cols-3 gap-6">
-    <div class="bg-white bg-opacity-10 p-6 text-center rounded-lg border border-yellow-300">
-      <img src="https://via.placeholder.com/150?text=Diana" alt="Diana" class="w-24 h-24 rounded-full mx-auto mb-3 border-2 border-yellow-300" />
-      <h4 class="text-lg font-semibold">Ms. Diana Laelatul Istiqomah</h4>
-      <p class="text-yellow-300">Komisaris Utama</p>
-    </div>
-    <div class="bg-white bg-opacity-10 p-6 text-center rounded-lg border border-yellow-300">
-      <img src="https://via.placeholder.com/150?text=Untung" alt="Untung" class="w-24 h-24 rounded-full mx-auto mb-3 border-2 border-yellow-300" />
-      <h4 class="text-lg font-semibold">Mr. Untung Suropati</h4>
-      <p class="text-yellow-300">Direktur Utama</p>
-    </div>
-    <div class="bg-white bg-opacity-10 p-6 text-center rounded-lg border border-yellow-300">
-      <img src="https://via.placeholder.com/150?text=Ahmad" alt="Ahmad" class="w-24 h-24 rounded-full mx-auto mb-3 border-2 border-yellow-300" />
-      <h4 class="text-lg font-semibold">Mr. Ahmad Muthliq Izaaz Nashor</h4>
-      <p class="text-yellow-300">Wakil Komisaris</p>
-    </div>
-    <div class="bg-white bg-opacity-10 p-6 text-center rounded-lg border border-yellow-300">
-      <img src="https://via.placeholder.com/150?text=Tamaroh" alt="Tamaroh" class="w-24 h-24 rounded-full mx-auto mb-3 border-2 border-yellow-300" />
-      <h4 class="text-lg font-semibold">Ms. Tamaroh</h4>
-      <p class="text-yellow-300">Finance</p>
-    </div>
-    <div class="bg-white bg-opacity-10 p-6 text-center rounded-lg border border-yellow-300">
-      <img src="https://via.placeholder.com/150?text=Irsyam" alt="Irsyam" class="w-24 h-24 rounded-full mx-auto mb-3 border-2 border-yellow-300" />
-      <h4 class="text-lg font-semibold">Mr. Irsyam Natsir</h4>
-      <p class="text-yellow-300">Tenaga Ahli Deck Departement</p>
-    </div>
-    <div class="bg-white bg-opacity-10 p-6 text-center rounded-lg border border-yellow-300">
-      <img src="https://via.placeholder.com/150?text=Fajar" alt="Fajar" class="w-24 h-24 rounded-full mx-auto mb-3 border-2 border-yellow-300" />
-      <h4 class="text-lg font-semibold">Mr. Fajar Ali Maksum</h4>
-      <p class="text-yellow-300">Tenaga Ahli Mesin Departement</p>
-    </div>
-    <div class="bg-white bg-opacity-10 p-6 text-center rounded-lg border border-yellow-300 col-span-full">
-      <img src="https://via.placeholder.com/150?text=Rohman" alt="Mohammad Nur Rohman" class="w-24 h-24 rounded-full mx-auto mb-3 border-2 border-yellow-300" />
-      <h4 class="text-lg font-semibold">Mr. Mohammad Nur Rohman</h4>
-      <p class="text-yellow-300">Tenaga IT</p>
-    </div>
-  </div>
+</div>
+</div>
+<section class="container mx-auto px-6 py-12 animate__animated animate__fadeInUp" data-aos="fade-up" id="struktur">
+<h2 class="text-3xl font-bold text-yellow-300 text-center mb-10">Struktur Organisasi</h2>
+<div class="grid md:grid-cols-3 gap-6">
+<div class="bg-white bg-opacity-10 p-6 text-center rounded-lg border border-yellow-300">
+<img alt="Diana" class="w-24 h-24 rounded-full mx-auto mb-3 border-2 border-yellow-300" src="https://via.placeholder.com/150?text=Diana"/>
+<h4 class="text-lg font-semibold">Ms. Diana Laelatul Istiqomah</h4>
+<p class="text-yellow-300">Komisaris Utama</p>
+</div>
+<div class="bg-white bg-opacity-10 p-6 text-center rounded-lg border border-yellow-300">
+<img alt="Untung" class="w-24 h-24 rounded-full mx-auto mb-3 border-2 border-yellow-300" src="https://via.placeholder.com/150?text=Untung"/>
+<h4 class="text-lg font-semibold">Mr. Untung Suropati</h4>
+<p class="text-yellow-300">Direktur Utama</p>
+</div>
+<div class="bg-white bg-opacity-10 p-6 text-center rounded-lg border border-yellow-300">
+<img alt="Ahmad" class="w-24 h-24 rounded-full mx-auto mb-3 border-2 border-yellow-300" src="https://via.placeholder.com/150?text=Ahmad"/>
+<h4 class="text-lg font-semibold">Mr. Ahmad Muthliq Izaaz Nashor</h4>
+<p class="text-yellow-300">Wakil Komisaris</p>
+</div>
+<div class="bg-white bg-opacity-10 p-6 text-center rounded-lg border border-yellow-300">
+<img alt="Tamaroh" class="w-24 h-24 rounded-full mx-auto mb-3 border-2 border-yellow-300" src="https://via.placeholder.com/150?text=Tamaroh"/>
+<h4 class="text-lg font-semibold">Ms. Tamaroh</h4>
+<p class="text-yellow-300">Finance</p>
+</div>
+<div class="bg-white bg-opacity-10 p-6 text-center rounded-lg border border-yellow-300">
+<img alt="Irsyam" class="w-24 h-24 rounded-full mx-auto mb-3 border-2 border-yellow-300" src="https://via.placeholder.com/150?text=Irsyam"/>
+<h4 class="text-lg font-semibold">Mr. Irsyam Natsir</h4>
+<p class="text-yellow-300">Tenaga Ahli Deck Departement</p>
+</div>
+<div class="bg-white bg-opacity-10 p-6 text-center rounded-lg border border-yellow-300">
+<img alt="Fajar" class="w-24 h-24 rounded-full mx-auto mb-3 border-2 border-yellow-300" src="https://via.placeholder.com/150?text=Fajar"/>
+<h4 class="text-lg font-semibold">Mr. Fajar Ali Maksum</h4>
+<p class="text-yellow-300">Tenaga Ahli Mesin Departement</p>
+</div>
+<div class="bg-white bg-opacity-10 p-6 text-center rounded-lg border border-yellow-300 col-span-full">
+<img alt="Mohammad Nur Rohman" class="w-24 h-24 rounded-full mx-auto mb-3 border-2 border-yellow-300" src="https://via.placeholder.com/150?text=Rohman"/>
+<h4 class="text-lg font-semibold">Mr. Mohammad Nur Rohman</h4>
+<p class="text-yellow-300">Tenaga IT</p>
+</div>
+</div>
 </section>
-
-  <!-- Galeri Crew -->
-<section id="galeri-crew" class="container mx-auto px-6 py-12 animate__animated animate__fadeInUp" data-aos="zoom-in-up">
-  <h2 class="text-3xl font-bold text-yellow-300 text-center mb-10">Galeri Crew</h2>
-  <div class="swiper gallerySwiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="https://via.placeholder.com/300x400?text=Crew+1" alt="Crew 1" class="rounded-lg border-4 border-yellow-400 cursor-pointer hover:scale-110 transition duration-300" onclick="openModal(this.src, this.alt)"></div>
-    <div class="swiper-slide"><img src="https://via.placeholder.com/300x400?text=Crew+2" alt="Crew 2" class="rounded-lg border-4 border-yellow-400 cursor-pointer hover:scale-110 transition duration-300" onclick="openModal(this.src, this.alt)"></div>
-    <div class="swiper-slide"><img src="https://via.placeholder.com/300x400?text=Crew+3" alt="Crew 3" class="rounded-lg border-4 border-yellow-400 cursor-pointer hover:scale-110 transition duration-300" onclick="openModal(this.src, this.alt)"></div>
-    <div class="swiper-slide"><img src="https://via.placeholder.com/300x400?text=Crew+4" alt="Crew 4" class="rounded-lg border-4 border-yellow-400 cursor-pointer hover:scale-110 transition duration-300" onclick="openModal(this.src, this.alt)"></div>
-  </div>
-  <div class="swiper-pagination"></div>
+<div class="w-full overflow-hidden">
+<svg viewbox="0 0 1440 320"><path d="M0,160L1440,320L1440,0L0,0Z" fill="#0f172a" fill-opacity="1"></path></svg>
 </div>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<!-- Galeri Crew -->
+<section class="container mx-auto px-6 py-12 animate__animated animate__fadeInUp" data-aos="zoom-in-up" id="galeri-crew">
+<h2 class="text-3xl font-bold text-yellow-300 text-center mb-10">Galeri Crew</h2>
+<div class="swiper gallerySwiper">
+<div class="swiper-wrapper">
+<div class="swiper-slide"><img alt="Crew 1" class="rounded-lg border-4 border-yellow-400 cursor-pointer hover:scale-110 transition duration-300" onclick="openModal(this.src, this.alt)" src="https://via.placeholder.com/300x400?text=Crew+1"/></div>
+<div class="swiper-slide"><img alt="Crew 2" class="rounded-lg border-4 border-yellow-400 cursor-pointer hover:scale-110 transition duration-300" onclick="openModal(this.src, this.alt)" src="https://via.placeholder.com/300x400?text=Crew+2"/></div>
+<div class="swiper-slide"><img alt="Crew 3" class="rounded-lg border-4 border-yellow-400 cursor-pointer hover:scale-110 transition duration-300" onclick="openModal(this.src, this.alt)" src="https://via.placeholder.com/300x400?text=Crew+3"/></div>
+<div class="swiper-slide"><img alt="Crew 4" class="rounded-lg border-4 border-yellow-400 cursor-pointer hover:scale-110 transition duration-300" onclick="openModal(this.src, this.alt)" src="https://via.placeholder.com/300x400?text=Crew+4"/></div>
+</div>
+<div class="swiper-pagination"></div>
+</div>
+<link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet"/>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
   new Swiper('.gallerySwiper', {
@@ -428,195 +502,266 @@
   });
 </script>
 </section>
-
+<div class="w-full overflow-hidden">
+<svg viewbox="0 0 1440 320"><path d="M0,160L1440,320L1440,0L0,0Z" fill="#0f172a" fill-opacity="1"></path></svg>
+</div>
 <!-- Dashboard Crew -->
-<section id="dashboard" class="container mx-auto px-6 py-12" data-aos="fade-up">
-  <h2 class="text-3xl font-bold text-yellow-300 text-center mb-6">Dashboard Crew</h2>
-  <div class="flex flex-col md:flex-row items-center justify-between mb-6 gap-4">
-<button onclick="window.print()" class="px-4 py-2 rounded bg-green-500 text-white font-semibold hover:bg-green-600">Print</button>
-      <button onclick="exportToCSV()" class="px-4 py-2 rounded bg-blue-500 text-white font-semibold hover:bg-blue-600">Export CSV</button>
-      <input type="text" id="searchCrew" placeholder="Cari nama..." class="px-4 py-2 rounded bg-white text-black w-full md:w-1/3" />
-      <select id="filterStatus" class="px-4 py-2 rounded bg-white text-black w-full md:w-1/3">
-        <option value="">Semua Status</option>
-        <option value="SUDAH BERANGKAT">SUDAH BERANGKAT</option>
-        <option value="DITERIMA">DITERIMA</option>
-        <option value="PROSES MCU">PROSES MCU</option>
-        <option value="PROSES VISA">PROSES VISA</option>
-      </select>
-    </div>
-      <table class="min-w-full bg-white bg-opacity-10 text-left rounded-xl overflow-hidden" id="dashboard">
-        <thead class="bg-yellow-400 text-blue-900">
-          <tr>
-            <th class="p-4">Nama</th>
-            <th class="p-4">Posisi</th>
-            <th class="p-4">Kapal</th>
-            <th class="p-4">Tanggal Berangkat</th>
-            <th class="p-4">Status</th>
-          </tr>
-        </thead>
-        SUDAH BERANGKAT$2
+<section class="container mx-auto px-6 py-12" data-aos="fade-up" id="dashboard">
+<h2 class="text-3xl font-bold text-yellow-300 text-center mb-6">Dashboard Crew</h2>
+<div class="flex flex-col md:flex-row items-center justify-between mb-6 gap-4">
+<button class="px-4 py-2 rounded bg-green-500 text-white font-semibold hover:bg-green-600" onclick="window.print()">Print</button>
+<button class="px-4 py-2 rounded bg-blue-500 text-white font-semibold hover:bg-blue-600" onclick="exportToCSV()">Export CSV</button>
+<input class="px-4 py-2 rounded bg-white text-black w-full md:w-1/3" id="searchCrew" placeholder="Cari nama..." type="text"/>
+<select class="px-4 py-2 rounded bg-white text-black w-full md:w-1/3" id="filterStatus">
+<option value="">Semua Status</option>
+<option value="SUDAH BERANGKAT">SUDAH BERANGKAT: 2</option>
+<option value="DITERIMA">DITERIMA</option>
+<option value="PROSES MCU">PROSES MCU</option>
+<option value="PROSES VISA">PROSES VISA</option>
+</select>
+</div>
+<table class="min-w-full bg-white bg-opacity-10 text-left rounded-xl overflow-hidden" id="dashboard">
+<thead class="bg-yellow-400 text-blue-900">
+<tr>
+<th class="p-4">Nama</th>
+<th class="p-4">Posisi</th>
+<th class="p-4">Kapal</th>
+<th class="p-4">Tanggal Berangkat</th>
+<th class="p-4">Status</th>
+</tr>
+</thead>
+        SUDAH BERANGKAT: 2
           <tr class="hover:bg-yellow-100 hover:text-blue-900">
-            <td class="p-4">Andi</td>
-            <td class="p-4">Wiper</td>
-            <td class="p-4">MT Laut Sejahtera</td>
-            <td class="p-4">22 Juni 2025</td>
-            <td class="p-4"><span class="px-2 py-1 rounded-full text-sm font-semibold text-white bg-blue-600">DITERIMA</span></td>
-          </tr>
-          <tr class="hover:bg-yellow-100 hover:text-blue-900">
-            <td class="p-4">Siti</td>
-            <td class="p-4">Cook</td>
-            <td class="p-4">MV Nusantara</td>
-            <td class="p-4">27 Juni 2025</td>
-            <td class="p-4"><span class="px-2 py-1 rounded-full text-sm font-semibold text-white bg-yellow-500">PROSES MCU</span></td>
-          </tr>
-          <tr class="hover:bg-yellow-100 hover:text-blue-900">
-            <td class="p-4">Budi</td>
-            <td class="p-4">Deck Cadet</td>
-            <td class="p-4">MT Samudera Raya</td>
-            <td class="p-4">30 Juni 2025</td>
-            <td class="p-4"><span class="px-2 py-1 rounded-full text-sm font-semibold text-white bg-green-600">PROSES VISA</span></td>
-          </tr>
-        </tbody>
-      </table>
-  </div>
+<td class="p-4">Andi</td>
+<td class="p-4">Wiper</td>
+<td class="p-4">MT Laut Sejahtera</td>
+<td class="p-4">22 Juni 2025</td>
+<td class="p-4"><span class="px-2 py-1 rounded-full text-sm font-semibold text-white bg-blue-600">DITERIMA</span></td>
+</tr>
+<tr class="hover:bg-yellow-100 hover:text-blue-900">
+<td class="p-4">Siti</td>
+<td class="p-4">Cook</td>
+<td class="p-4">MV Nusantara</td>
+<td class="p-4">27 Juni 2025</td>
+<td class="p-4"><span class="px-2 py-1 rounded-full text-sm font-semibold text-white bg-yellow-500">PROSES MCU</span></td>
+</tr>
+<tr class="hover:bg-yellow-100 hover:text-blue-900">
+<td class="p-4">Budi</td>
+<td class="p-4">Deck Cadet</td>
+<td class="p-4">MT Samudera Raya</td>
+<td class="p-4">30 Juni 2025</td>
+<td class="p-4"><span class="px-2 py-1 rounded-full text-sm font-semibold text-white bg-green-600">PROSES VISA</span></td>
+</tr>
+</table>
 </section>
-  
-
+<div class="w-full overflow-hidden">
+<svg viewbox="0 0 1440 320"><path d="M0,160L1440,320L1440,0L0,0Z" fill="#0f172a" fill-opacity="1"></path></svg>
+</div>
 <!-- Statistik Crew -->
 <section class="container mx-auto px-6 py-12 animate__animated animate__fadeInUp" data-aos="fade-up">
-  <h2 class="text-3xl font-bold text-yellow-300 text-center mb-6">Statistik Crew</h2>
+<h2 class="text-3xl font-bold text-yellow-300 text-center mb-6">Statistik Crew</h2>
 <p class="text-center text-white text-sm mb-6">Data crew aktif yang sudah diberangkatkan</p>
 <div class="text-center text-3xl font-bold text-yellow-400 animate-count" data-target="34">0</div>
-  <canvas id="crewChart" class="bg-white rounded-lg p-4"></canvas>
+<canvas class="bg-white rounded-lg p-4" id="crewChart"></canvas>
 </section>
-
+<div class="w-full overflow-hidden">
+<svg viewbox="0 0 1440 320"><path d="M0,160L1440,320L1440,0L0,0Z" fill="#0f172a" fill-opacity="1"></path></svg>
+</div>
 <!-- Kalender Keberangkatan -->
 <section class="container mx-auto px-6 py-12" data-aos="fade-up">
-  <h2 class="text-3xl font-bold text-yellow-300 text-center mb-6">Kalender Keberangkatan</h2>
-  <div id="calendar" class="bg-white rounded-lg p-4 text-black"></div>
+<h2 class="text-3xl font-bold text-yellow-300 text-center mb-6">Kalender Keberangkatan</h2>
+<div class="bg-white rounded-lg p-4 text-black" id="calendar"></div>
 </section>
-
+<div class="w-full overflow-hidden">
+<svg viewbox="0 0 1440 320"><path d="M0,160L1440,320L1440,0L0,0Z" fill="#0f172a" fill-opacity="1"></path></svg>
+</div>
 <!-- Testimoni -->
 <section class="container mx-auto px-6 py-12" data-aos="fade-up">
-  <h2 class="text-3xl font-bold text-yellow-300 text-center mb-10">Testimoni Crew</h2>
-  <div class="grid md:grid-cols-2 gap-6">
-    <blockquote class="bg-white bg-opacity-10 p-6 rounded-xl border border-yellow-300 text-white">
-      <p class="italic">"Saya sangat puas bekerja sama dengan PT BUS. Penyalurannya cepat dan aman!"</p>
-      <footer class="mt-2 font-bold text-yellow-300">— Andi, ABK</footer>
-    </blockquote>
-    <blockquote class="bg-white bg-opacity-10 p-6 rounded-xl border border-yellow-300 text-white">
-      <p class="italic">"Prosesnya sangat profesional dan membantu dari awal sampai keberangkatan."</p>
-      <footer class="mt-2 font-bold text-yellow-300">— Lilis, Juru Masak</footer>
-    </blockquote>
-  </div>
+<h2 class="text-3xl font-bold text-yellow-300 text-center mb-10">Testimoni Crew</h2>
+<div class="grid md:grid-cols-2 gap-6">
+<blockquote class="bg-white bg-opacity-10 p-6 rounded-xl border border-yellow-300 text-white">
+<p class="italic">"Saya sangat puas bekerja sama dengan PT BUS. Penyalurannya cepat dan aman!"</p>
+<section class="container mx-auto px-6 py-12" data-aos="fade-up">
+<h2 class="text-3xl font-bold text-yellow-300 text-center mb-6">❓ Tanya Jawab (FAQ)</h2>
+<div class="space-y-4 max-w-3xl mx-auto">
+<details class="bg-white bg-opacity-10 p-4 rounded-lg border border-yellow-300 text-white">
+<summary class="font-semibold cursor-pointer">Bagaimana proses perekrutan ABK?</summary>
+<p class="mt-2">Kami melalui seleksi administrasi, MCU, interview, dan penempatan ke kapal.</p>
+</details>
+<details class="bg-white bg-opacity-10 p-4 rounded-lg border border-yellow-300 text-white">
+<summary class="font-semibold cursor-pointer">Apakah PT BUS bekerja sama dengan perusahaan luar negeri?</summary>
+<p class="mt-2">Ya, kami bermitra dengan banyak perusahaan pelayaran internasional.</p>
+</details>
+<details class="bg-white bg-opacity-10 p-4 rounded-lg border border-yellow-300 text-white">
+<summary class="font-semibold cursor-pointer">Apakah pendaftaran bisa dilakukan secara online?</summary>
+<p class="mt-2">Tentu! Gunakan formulir di bagian atas halaman ini untuk mendaftar secara online.</p>
+</details>
+</div>
+</section>
+<div class="w-full overflow-hidden">
+<svg viewbox="0 0 1440 320"><path d="M0,160L1440,320L1440,0L0,0Z" fill="#0f172a" fill-opacity="1"></path></svg>
+</div>
+<section class="container mx-auto px-6 py-12" data-aos="fade-up">
+<h2 class="text-3xl font-bold text-yellow-300 text-center mb-6">🤝 Mitra &amp; Klien Kami</h2>
+<div class="swiper partnerSwiper">
+<div class="swiper-wrapper">
+<div class="swiper-slide flex justify-center items-center"><img alt="Mitra 1" class="h-20" src="https://via.placeholder.com/150x80?text=Mitra+1"/></div>
+<div class="swiper-slide flex justify-center items-center"><img alt="Mitra 2" class="h-20" src="https://via.placeholder.com/150x80?text=Mitra+2"/></div>
+<div class="swiper-slide flex justify-center items-center"><img alt="Mitra 3" class="h-20" src="https://via.placeholder.com/150x80?text=Mitra+3"/></div>
+<div class="swiper-slide flex justify-center items-center"><img alt="Mitra 4" class="h-20" src="https://via.placeholder.com/150x80?text=Mitra+4"/></div>
+</div>
+<div class="swiper-pagination"></div>
+</div>
+</section>
+<div class="w-full overflow-hidden">
+<svg viewbox="0 0 1440 320"><path d="M0,160L1440,320L1440,0L0,0Z" fill="#0f172a" fill-opacity="1"></path></svg>
+</div>
+<script>
+  new Swiper('.partnerSwiper', {
+    slidesPerView: 2,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false
+    },
+    breakpoints: {
+      640: { slidesPerView: 3 },
+      1024: { slidesPerView: 4 }
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    }
+  });
+</script>
+
+<section class="container mx-auto px-6 py-16" data-aos="fade-right">
+<h2 class="text-4xl font-bold text-yellow-300 text-center mb-6">Tentang Kami</h2>
+<p class="text-white text-lg max-w-3xl mx-auto text-center leading-relaxed">
+    PT Bahari Untung Samudera adalah perusahaan pelayaran terpercaya yang telah melayani industri maritim dengan profesionalisme tinggi.
+    Dengan komitmen terhadap <strong>kualitas</strong>, <strong>keselamatan</strong>, dan <strong>pengembangan SDM</strong>, kami siap mencetak pelaut unggul Indonesia untuk pasar global.
+  </p>
 </section>
 
+<section class="container mx-auto px-6 py-16" data-aos="zoom-in">
+<h2 class="text-4xl font-bold text-yellow-300 text-center mb-8">Galeri Armada &amp; Kegiatan</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+<img alt="Foto 1" class="rounded-lg shadow-md hover:scale-105 transition cursor-pointer" src="https://source.unsplash.com/400x300/?ship,1"/>
+<img alt="Foto 2" class="rounded-lg shadow-md hover:scale-105 transition cursor-pointer" src="https://source.unsplash.com/400x300/?crew,2"/>
+<img alt="Foto 3" class="rounded-lg shadow-md hover:scale-105 transition cursor-pointer" src="https://source.unsplash.com/400x300/?harbor,3"/>
+</div>
+</section>
+<footer class="mt-2 font-bold text-yellow-300">— Andi, ABK</footer>
+</blockquote>
+<blockquote class="bg-white bg-opacity-10 p-6 rounded-xl border border-yellow-300 text-white">
+<p class="italic">"Prosesnya sangat profesional dan membantu dari awal sampai keberangkatan."</p>
+<footer class="mt-2 font-bold text-yellow-300">— Lilis, Juru Masak</footer>
+</blockquote>
+</div>
+</section>
+<div class="w-full overflow-hidden">
+<svg viewbox="0 0 1440 320"><path d="M0,160L1440,320L1440,0L0,0Z" fill="#0f172a" fill-opacity="1"></path></svg>
+</div>
 <!-- Video Profil Perusahaan -->
 <section class="container mx-auto px-6 py-12" data-aos="fade-up">
-  <h2 class="text-3xl font-bold text-yellow-300 text-center mb-6">Video Profil Perusahaan</h2>
-  <div class="aspect-w-16 aspect-h-9">
-    <iframe class="w-full h-64 rounded-lg border-4 border-yellow-400" src="https://www.youtube.com/embed/Ea5gyOYD_pg?si=ZksTmT1upZIeXaXQ" frameborder="0" allowfullscreen></iframe>
-  </div>
-</section>
+<h2 class="text-3xl font-bold text-yellow-300 text-center mb-6">Video Profil Perusahaan</h2>
+<div class="aspect-w-16 aspect-h-9">
+<iframe allowfullscreen="" class="w-full h-64 rounded-lg border-4 border-yellow-400" frameborder="0" src="https://www.youtube.com/embed/Ea5gyOYD_pg?si=ZksTmT1upZIeXaXQ"></iframe>
 </div>
-
+</section>
+<div class="w-full overflow-hidden">
+<svg viewbox="0 0 1440 320"><path d="M0,160L1440,320L1440,0L0,0Z" fill="#0f172a" fill-opacity="1"></path></svg>
+</div>
 <!-- Navigasi Tab -->
 <nav class="sticky top-0 z-50 bg-gradient-to-r from-blue-800 to-indigo-900 py-4 shadow-md animate__animated animate__fadeInDown">
-  <div class="container mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 px-4">
-    <a href="#form" class="bg-white text-blue-900 font-bold py-3 px-4 rounded-lg shadow-md hover:bg-yellow-400 hover:text-black transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-center flex items-center justify-center">
-      <i class="fas fa-user-plus mr-2"></i> Pendaftaran
+<div class="container mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 px-4">
+<a class="bg-white text-blue-900 font-bold py-3 px-4 rounded-lg shadow-md hover:bg-yellow-400 hover:text-black transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-center flex items-center justify-center" href="#form">
+<i class="fas fa-user-plus mr-2"></i> Pendaftaran
     </a>
-    <a href="#login" class="bg-white text-blue-900 font-bold py-3 px-4 rounded-lg shadow-md hover:bg-yellow-400 hover:text-black transition-all duration-300 transform hover:scale-105 text-center flex items-center justify-center">
-      <i class="fas fa-sign-in-alt mr-2"></i> Login
+<a class="bg-white text-blue-900 font-bold py-3 px-4 rounded-lg shadow-md hover:bg-yellow-400 hover:text-black transition-all duration-300 transform hover:scale-105 text-center flex items-center justify-center" href="#login">
+<i class="fas fa-sign-in-alt mr-2"></i> Login
     </a>
-    <a href="#visi-misi" class="bg-white text-blue-900 font-bold py-3 px-4 rounded-lg shadow-md hover:bg-yellow-400 hover:text-black transition-all duration-300 transform hover:scale-105 text-center flex items-center justify-center">
-      <i class="fas fa-bullseye mr-2"></i> Visi & Misi
+<a class="bg-white text-blue-900 font-bold py-3 px-4 rounded-lg shadow-md hover:bg-yellow-400 hover:text-black transition-all duration-300 transform hover:scale-105 text-center flex items-center justify-center" href="#visi-misi">
+<i class="fas fa-bullseye mr-2"></i> Visi &amp; Misi
     </a>
-    <a href="#struktur" class="bg-white text-blue-900 font-bold py-3 px-4 rounded-lg shadow-md hover:bg-yellow-400 hover:text-black transition-all duration-300 transform hover:scale-105 text-center flex items-center justify-center">
-      <i class="fas fa-sitemap mr-2"></i> Struktur
+<a class="bg-white text-blue-900 font-bold py-3 px-4 rounded-lg shadow-md hover:bg-yellow-400 hover:text-black transition-all duration-300 transform hover:scale-105 text-center flex items-center justify-center" href="#struktur">
+<i class="fas fa-sitemap mr-2"></i> Struktur
     </a>
-    <a href="#dashboard" class="bg-white text-blue-900 font-bold py-3 px-4 rounded-lg shadow-md hover:bg-yellow-400 hover:text-black transition-all duration-300 transform hover:scale-105 text-center flex items-center justify-center">
-      <i class="fas fa-ship mr-2"></i> Dashboard
+<a class="bg-white text-blue-900 font-bold py-3 px-4 rounded-lg shadow-md hover:bg-yellow-400 hover:text-black transition-all duration-300 transform hover:scale-105 text-center flex items-center justify-center" href="#dashboard">
+<i class="fas fa-ship mr-2"></i> Dashboard
     </a>
-    <a href="#galeri-crew" class="bg-white text-blue-900 font-bold py-3 px-4 rounded-lg shadow-md hover:bg-yellow-400 hover:text-black transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-center flex items-center justify-center">
-      <i class="fas fa-images mr-2"></i> Galeri
+<a class="bg-white text-blue-900 font-bold py-3 px-4 rounded-lg shadow-md hover:bg-yellow-400 hover:text-black transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-center flex items-center justify-center" href="#galeri-crew">
+<i class="fas fa-images mr-2"></i> Galeri
     </a>
-    <a href="#kontak" class="bg-white text-blue-900 font-bold py-3 px-4 rounded-lg shadow-md hover:bg-yellow-400 hover:text-black transition-all duration-300 transform hover:scale-105 text-center flex items-center justify-center col-span-2 lg:col-span-1">
-      <i class="fas fa-envelope mr-2"></i> Kontak
+<a class="bg-white text-blue-900 font-bold py-3 px-4 rounded-lg shadow-md hover:bg-yellow-400 hover:text-black transition-all duration-300 transform hover:scale-105 text-center flex items-center justify-center col-span-2 lg:col-span-1" href="#kontak">
+<i class="fas fa-envelope mr-2"></i> Kontak
     </a>
-  </div>
-
-<div class="text-center py-2">
-  <button onclick="setLanguage('id')" class="bg-yellow-300 text-blue-900 font-bold px-4 py-2 rounded hover:bg-yellow-400">🇮🇩 Indonesia</button>
-  <button onclick="setLanguage('en')" class="bg-yellow-300 text-blue-900 font-bold px-4 py-2 rounded hover:bg-yellow-400 ml-2">🇬🇧 English</button>
 </div>
-
+<div class="text-center py-2">
+<button class="bg-yellow-300 text-blue-900 font-bold px-4 py-2 rounded hover:bg-yellow-400" onclick="setLanguage('id')">🇮🇩 Indonesia</button>
+<button class="bg-yellow-300 text-blue-900 font-bold px-4 py-2 rounded hover:bg-yellow-400 ml-2" onclick="setLanguage('en')">🇬🇧 English</button>
+</div>
 <!-- Kontak Section -->
-<section id="kontak" class="container mx-auto px-6 py-12 max-w-4xl" data-aos="fade-up">
-  <h2 class="text-3xl font-bold mb-6 text-center text-yellow-300 drop-shadow">Kontak Kami</h2>
-  <div class="text-center mb-6">
-    <p class="text-lg">📍 Alamat: Jalan.Ir, Juanda Kel Krandon,Kec Margadana ,Kota Tegal(52146)</p>
-    <p class="text-lg">📞 Telepon: 0812-3456-7890</p>
-    <p class="text-lg">📧 Email: Teambuss57@gmail.com</p>
-  </div>
-  <div class="flex justify-center">
-   <iframe 
-  src="https://maps.google.com/maps?q=Jl.+Ir.+Juanda+No.37%2C+Krandon%2C+Kec.+Margadana%2C+Kota+Tegal%2C+Jawa+Tengah+52146&t=k&z=13&ie=UTF8&iwloc=&output=embed" 
-  width="100%" 
-  height="300" 
-  style="border:0; border-radius:12px;" 
-  allowfullscreen="" 
-  loading="lazy" 
-  referrerpolicy="no-referrer-when-downgrade">
+<section class="container mx-auto px-6 py-12 max-w-4xl" data-aos="fade-up" id="kontak">
+<h2 class="text-3xl font-bold mb-6 text-center text-yellow-300 drop-shadow">Kontak Kami</h2>
+<div class="text-center mb-6">
+<p class="text-lg">📍 Alamat: Jalan.Ir, Juanda Kel Krandon,Kec Margadana ,Kota Tegal(52146)</p>
+<p class="text-lg">📞 Telepon: 0812-3456-7890</p>
+<p class="text-lg">📧 Email: Teambuss57@gmail.com</p>
+</div>
+<div class="flex justify-center">
+<iframe allowfullscreen="" height="300" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Jl.+Ir.+Juanda+No.37%2C+Krandon%2C+Kec.+Margadana%2C+Kota+Tegal%2C+Jawa+Tengah+52146&amp;t=k&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed" style="border:0; border-radius:12px;" width="100%">
 </iframe>
-  </div>
+</div>
 </section>
-
+<div class="w-full overflow-hidden">
+<svg viewbox="0 0 1440 320"><path d="M0,160L1440,320L1440,0L0,0Z" fill="#0f172a" fill-opacity="1"></path></svg>
+</div>
 <!-- Footer Baru Modern -->
 <footer class="bg-black text-white py-12">
-  <div class="container mx-auto grid md:grid-cols-4 gap-8 px-6">
-    <div>
-      <img src="LOGO KE 2.jpg" alt="Logo" class="h-16 mb-4">
-      <div class="flex space-x-4">
-        <a href="#" class="text-blue-400 text-xl"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="text-blue-600 text-xl"><i class="fab fa-facebook"></i></a>
-        <a href="#" class="text-blue-700 text-xl"><i class="fab fa-linkedin"></i></a>
-      </div>
-    </div>
-    <div>
-      <h4 class="text-lg font-bold border-b-2 border-blue-500 mb-3">Overview About Us</h4>
-      <p class="text-sm">PT. Bahari Untung Samudera is a trusted maritime crew recruitment and placement company, committed to professionalism and quality.</p>
-    </div>
-    <div>
-      <h4 class="text-lg font-bold border-b-2 border-blue-500 mb-3">Contact Us</h4>
-      <ul class="text-sm space-y-2">
-        <li><i class="fab fa-skype text-blue-500 mr-2"></i> live:bahariuntung</li>
-        <li><i class="fab fa-whatsapp text-green-500 mr-2"></i> 0812-3456-7890</li>
-        <li><i class="fas fa-phone-alt text-blue-400 mr-2"></i> (021) 224-09350</li>
-        <li><i class="fas fa-envelope text-yellow-300 mr-2"></i> Teambuss57@gmail.com</li>
-        <li><i class="fas fa-map-marker-alt text-red-500 mr-2"></i> Jalan.Ir, Juanda.02 Rt 03 Rt 003 Kelurahan Krandon ,Kecamatan Margadana ,Kota 
+<div class="container mx-auto grid md:grid-cols-4 gap-8 px-6">
+<div>
+<img alt="Logo" class="h-16 mb-4" src="LOGO KE 2.jpg"/>
+<div class="flex space-x-4">
+<a class="text-blue-400 text-xl" href="#"><i class="fab fa-instagram"></i></a>
+<a class="text-blue-600 text-xl" href="#"><i class="fab fa-facebook"></i></a>
+<a class="text-blue-700 text-xl" href="#"><i class="fab fa-linkedin"></i></a>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-bold border-b-2 border-blue-500 mb-3">Overview About Us</h4>
+<p class="text-sm">PT. Bahari Untung Samudera is a trusted maritime crew recruitment and placement company, committed to professionalism and quality.</p>
+</div>
+<div>
+<h4 class="text-lg font-bold border-b-2 border-blue-500 mb-3">Contact Us</h4>
+<ul class="text-sm space-y-2">
+<li><i class="fab fa-skype text-blue-500 mr-2"></i> live:bahariuntung</li>
+<li><i class="fab fa-whatsapp text-green-500 mr-2"></i> 0812-3456-7890</li>
+<li><i class="fas fa-phone-alt text-blue-400 mr-2"></i> (021) 224-09350</li>
+<li><i class="fas fa-envelope text-yellow-300 mr-2"></i> Teambuss57@gmail.com</li>
+<li><i class="fas fa-map-marker-alt text-red-500 mr-2"></i> Jalan.Ir, Juanda.02 Rt 03 Rt 003 Kelurahan Krandon ,Kecamatan Margadana ,Kota 
 Tegal -Jawa Tengah -Indonesia (52146)</li>
-      </ul>
-    </div>
-    <div>
-      <h4 class="text-lg font-bold border-b-2 border-blue-500 mb-3">Latest Blogs</h4>
-      <ul class="text-sm space-y-3">
-        <li class="flex gap-2">
-          <img src="https://via.placeholder.com/60" class="rounded shadow" />
-          <span>Why PT BUS is the Ideal Partner for Maritime Crew</span>
-        </li>
-        <li class="flex gap-2">
-          <img src="https://via.placeholder.com/60" class="rounded shadow" />
-          <span>Importance of Specialized Ship Crews</span>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="text-center text-sm mt-10 border-t border-gray-700 pt-4">
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold border-b-2 border-blue-500 mb-3">Latest Blogs</h4>
+<ul class="text-sm space-y-3">
+<li class="flex gap-2">
+<img class="rounded shadow" src="https://via.placeholder.com/60"/>
+<span>Why PT BUS is the Ideal Partner for Maritime Crew</span>
+</li>
+<li class="flex gap-2">
+<img class="rounded shadow" src="https://via.placeholder.com/60"/>
+<span>Importance of Specialized Ship Crews</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="text-center text-sm mt-10 border-t border-gray-700 pt-4">
     © 2025 PT Bahari Untung Samudera. All rights reserved.
   </div>
 </footer>
-
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollreveal/4.0.9/scrollreveal.min.js"></script>
 <script>
@@ -907,5 +1052,9 @@ if (ctx) {
     update();
   });
 </script>
+</nav>
+<a class="fixed bottom-6 left-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition" href="https://wa.me/6281234567890" target="_blank">
+<i class="fab fa-whatsapp text-2xl"></i>
+</a>
 </body>
 </html>
