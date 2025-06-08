@@ -81,7 +81,6 @@
       text-decoration: underline;
     }
   </style>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&amp;display=swap" rel="stylesheet"/>
 <style>
       body { font-family: 'Poppins', sans-serif; }
@@ -114,7 +113,6 @@
     scrollBar.style.width = scrolled + "%";
   });
 </script>
-
 <div class="fixed top-4 right-4 z-50">
 <button class="bg-yellow-300 text-blue-900 font-bold px-4 py-2 rounded shadow hover:bg-yellow-400" id="toggleDarkMode">
     🌙 Toggle Mode
@@ -184,16 +182,19 @@
 </div>
 </div>
 <div class="relative w-full h-96 overflow-hidden">
+<video autoplay="" class="absolute w-full h-full object-cover z-0" loop="" muted="" playsinline="">
+<source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4"/>
+</video>
 <div class="swiper-container w-full h-full">
 <div class="swiper-wrapper">
 <div class="swiper-slide">
-<img class="w-full h-full object-cover transition-transform duration-1000 transform scale-105 auto=format&amp;fit=crop&amp;w=1920&amp;q=80" src="kapalbesar.jpg"/>
+<img class="w-full h-full object-cover transition-transform duration-1000 transform scale-105 auto=format&amp;fit=crop&amp;w=1920&amp;q=80" src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Foto - Foto\kapalbesar.jpg"/>
 </div>
 <div class="swiper-slide">
-<img class="w-full h-full object-cover transition-transform duration-1000 transform scale-105 auto=format&amp;fit=crop&amp;w=1920&amp;q=80" src="kapalbesar1.jpg"/>
+<img class="w-full h-full object-cover transition-transform duration-1000 transform scale-105 auto=format&amp;fit=crop&amp;w=1920&amp;q=80" src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Foto - Foto\kapalbesar1.jpg"/>
 </div>
 <div class="swiper-slide">
-<img class="w-full h-full object-cover transition-transform duration-1000 transform scale-105 auto=format&amp;fit=crop&amp;w=1920&amp;q=80" src="kapalbesar2.jpg"/>
+<img class="w-full h-full object-cover transition-transform duration-1000 transform scale-105 auto=format&amp;fit=crop&amp;w=1920&amp;q=80" src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Foto - Foto\kapalbesar2.jpg"/>
 </div>
 </div>
 </div>
@@ -260,45 +261,10 @@
 <!-- Include External Sections -->
 <div id="form-login-struktur-dll">
 <!-- Form Pendaftaran -->
-<section class="py-12 px-6 container mx-auto max-w-3xl" data-aos="fade-up" id="form">
-<h2 class="text-3xl font-bold mb-6 text-yellow-300 text-center">Formulir Pendaftaran ABK</h2>
-<form class="bg-white bg-opacity-10 p-6 rounded-xl shadow-lg backdrop-blur-md border border-yellow-300 space-y-4">
-<input class="w-full p-3 rounded bg-white bg-opacity-80 text-black" placeholder="Nama Lengkap" type="text"/>
-<input class="w-full p-3 rounded bg-white bg-opacity-80 text-black" placeholder="Email" type="email"/>
-<input class="w-full p-3 rounded bg-white bg-opacity-80 text-black" placeholder="Posisi yang Dilamar" type="text"/>
-<input accept=".pdf,.doc,.docx" class="w-full p-3 rounded bg-white bg-opacity-80 text-black f i l e : m r - 2 f i l e : b g - y e l l o w - 3 0 0 f i l e : t e x t - b l u e - 9 0 0" required="required" type="file"/>
-<button class="w-full bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-3 px-6 rounded transition-transform transform hover:scale-105" type="submit">Kirim</button>
-</form>
-</section>
 <div class="w-full overflow-hidden">
 <svg viewbox="0 0 1440 320"><path d="M0,160L1440,320L1440,0L0,0Z" fill="#0f172a" fill-opacity="1"></path></svg>
 </div>
 <!-- Form Login -->
-<section class="py-12 px-6 container mx-auto max-w-3xl" data-aos="fade-up" id="login">
-<h2 class="text-3xl font-bold mb-6 text-yellow-300 text-center">Login ABK</h2>
-<form class="bg-white bg-opacity-10 p-6 rounded-xl shadow-lg backdrop-blur-md border border-yellow-300 space-y-4">
-<input class="w-full p-3 rounded bg-white bg-opacity-80 text-black" placeholder="Email" type="email"/>
-<input class="w-full p-3 rounded bg-white bg-opacity-80 text-black" placeholder="Password" type="password"/>
-<button class="w-full bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-3 px-6 rounded" type="submit">Login</button>
-</form>
-<div class="mt-4 p-4 bg-white bg-opacity-10 rounded border border-yellow-300 text-white hidden" id="statusMessage">
-<p class="font-bold text-yellow-300">Status Crew:</p>
-<ul class="list-disc list-inside text-sm mt-2">
-<li>Email: <span id="crewEmail">-</span></li>
-<li>Posisi: Deck Cadet</li>
-<li>Status: PROSES MCU</li>
-</ul>
-</div>
-<script>
-      const loginForm = document.querySelector('#login form');
-      loginForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const email = loginForm.querySelector('input[type="email"]').value;
-        document.getElementById('crewEmail').textContent = email;
-        document.getElementById('statusMessage').classList.remove('hidden');
-      });
-    </script>
-</section>
 <div class="w-full overflow-hidden">
 <svg viewbox="0 0 1440 320"><path d="M0,160L1440,320L1440,0L0,0Z" fill="#0f172a" fill-opacity="1"></path></svg>
 </div>
@@ -312,8 +278,37 @@
 <img alt="Background" class="w-full h-full object-cover absolute inset-0 z-0" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&amp;fit=crop&amp;w=1920&amp;q=80"/>
 <div class="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
 <div class="relative z-20 px-4 py-10 md:px-10 text-white">
-<section class="container mx-auto px-6 py-12 bg-fixed bg-center bg-cover" data-aos="fade-up" data-aos-duration="1000" id="visi-misi" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&amp;fit=crop&amp;w=1470&amp;q=80');">
-<h2 class="text-4xl font-extrabold text-yellow-300 text-center mb-10">Visi &amp; Misi</h2>
+<div class="container max-w-screen-lg mx-auto px-4 md:px-8 py-6 md:py-10 flex flex-col md:flex-row gap-4 md:gap-6 lg:gap-10 justify-center items-start bg-gradient-to-br from-slate-800 to-blue-900 rounded-xl shadow-xl">
+<section class="w-full md:w-1/2 bg-white/10 backdrop-blur rounded-xl p-6 shadow-lg border border-yellow-300" id="form">
+<h2 class="text-xl font-bold text-yellow-300 text-center mb-4 text-lg md:text-xl lg:text-2xl">Formulir Pendaftaran ABK</h2>
+<div class="text-center mt-4">
+<a class="inline-block bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-semibold px-6 py-3 rounded transition" href="https://docs.google.com/forms/d/e/1FAIpQLSfggLASrs-7CbzTrGgf2Boqe-3LtqvFMo72hlk9FdiJkrpw2A/viewform?usp=sharing&amp;ouid=112930726443614498048" target="_blank">
+         Isi Formulir di Google Form
+      </a>
+</div>
+</section>
+<section class="w-full md:w-1/2 bg-white/10 backdrop-blur rounded-xl p-6 shadow-lg border border-yellow-300" id="login">
+<h2 class="text-xl font-bold text-yellow-300 text-center mb-4 text-lg md:text-xl lg:text-2xl">Login ABK</h2>
+<form class="space-y-4">
+<div class="flex items-center bg-white/80 rounded px-3 py-2"><i class="fas fa-envelope text-gray-500 mr-2"></i><input class="w-full bg-transparent focus:outline-none text-black" placeholder="Email" required="" type="email"/></div>
+<div class="flex items-center bg-white/80 rounded px-3 py-2"><i class="fas fa-lock text-gray-500 mr-2"></i><input class="w-full bg-transparent focus:outline-none text-black" placeholder="Password" required="" type="password"/></div>
+<button class="w-full py-3 bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-semibold rounded transition" type="submit">Login</button>
+</form>
+</section>
+</div>
+<section class="w-full relative text-center px-4 mb-1 py-2">
+<div class="absolute inset-0 z-0">
+<video autoplay="" class="w-full h-full object-cover opacity-20" loop="" muted="" playsinline="">
+<source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="relative z-10">
+<h2 class="text-4xl font-bold text-yellow-300 mb-2 text-lg md:text-xl lg:text-2xl">Gabung Bersama Kami Sekarang!</h2>
+<p class="text-white max-w-xl mx-auto">Isi formulir pendaftaran dan jadilah bagian dari pelaut profesional Indonesia yang siap berlayar ke dunia internasional.</p>
+</div>
+</section>
+<section class="py-20 px-4 md:px-12 bg-gradient-to-br from-slate-900 to-blue-900 text-white text-center rounded-xl shadow-lg" data-aos="fade-up" data-aos-duration="1000" id="visi-misi" style="background-image: url('https://images.unsplash.com/photo-1549887534-4b6164f5a5d8?auto=format&amp;fit=crop&amp;w=1500&amp;q=80');background-size: cover;background-position: center;background-repeat: no-repeat;border-radius: 1rem;padding: 2rem;"><div style="background-color: rgba(0, 0, 0, 0.4); padding: 2rem; border-radius: 1rem;">
+<h2 class="text-4xl font-extrabold text-yellow-300 mb-8 drop-shadow">Visi &amp; Misi</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div class="p-6 backdrop-blur-lg bg-white bg-opacity-10 border border-yellow-300 rounded-xl shadow-lg transition-transform hover:scale-105">
 <h3 class="text-xl font-bold text-yellow-300 flex items-center gap-2 mb-3">
@@ -334,6 +329,23 @@
 </ul>
 </div>
 </div>
+</div></section>
+<section class="py-20 px-4 md:px-12 bg-gradient-to-tr from-blue-900 to-slate-800 text-white text-center" id="tentang-kami">
+<h2 class="text-4xl md:text-5xl font-extrabold text-yellow-300 mb-4">Tentang Kami</h2>
+<p class="text-lg md:text-xl leading-relaxed max-w-4xl mx-auto text-slate-200">
+    PT Bahari Untung Samudera adalah perusahaan pelayaran yang berkomitmen untuk menyediakan layanan kru dan logistik maritim terbaik.
+    Kami berfokus pada kualitas, keselamatan, dan pengembangan SDM pelaut Indonesia agar mampu bersaing di tingkat global.
+    Dengan pengalaman dan jaringan luas, kami siap menghubungkan tenaga pelaut ke berbagai kapal niaga internasional.
+  </p>
+</section>
+<section class="py-20 px-4 md:px-12 bg-gradient-to-r from-slate-100 via-blue-100 to-slate-200 text-center shadow-inner rounded-t-3xl" id="peta-pelayaran">
+<h2 class="text-4xl md:text-5xl font-extrabold text-blue-800 mb-4 drop-shadow">Jangkauan Pelayaran Kami</h2>
+<p class="text-lg md:text-xl text-slate-700 mb-8 max-w-3xl mx-auto">Kami melayani pelaut dan pengiriman ke berbagai wilayah di Asia, Timur Tengah, dan Eropa.</p>
+<div class="relative w-full max-w-5xl mx-auto">
+<img alt="Peta Pelayaran" class="w-full max-w-5xl h-auto mx-auto rounded-3xl shadow-2xl border-4 border-white transition duration-500 hover:scale-105" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/BlankMap-World-v2.png/1200px-BlankMap-World-v2.png"/>
+<!-- Ship Icons -->
+<!-- Animated path lines (CSS pulse effect using border) -->
+</div>
 </section>
 </div>
 </div>
@@ -349,11 +361,11 @@
 <button class="px-4 py-2 m-1 bg-yellow-400 text-blue-900 font-bold rounded hover:bg-yellow-500" onclick="filterKapal('penumpang')">Penumpang</button>
 <button class="px-4 py-2 m-1 bg-yellow-400 text-blue-900 font-bold rounded hover:bg-yellow-500" onclick="filterKapal('support')">Support</button>
 </div>
-<h2 class="text-3xl font-bold text-yellow-300 text-center mb-10">Jenis Kapal yang Didukung</h2>
+<h2 class="text-3xl font-bold text-yellow-300 text-center mb-10 text-lg md:text-xl lg:text-2xl">Jenis Kapal yang Didukung</h2>
 <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="kapalGrid">
 <!-- Kartu 1 -->
 <div class="bg-white text-black rounded-lg shadow-lg overflow-hidden kapal-card" data-aos="zoom-in" data-kategori="cargo">
-<img alt="Container Ship" class="w-full h-48 object-cover transition duration-300 ease-in-out transform hover:scale-105 hover:saturate-150 hover:brightness-110 rounded-t-lg" src="cargo ship.jpg"/>
+<img alt="Container Ship" class="w-full h-48 object-cover transition duration-300 ease-in-out transform hover:scale-105 hover:saturate-150 hover:brightness-110 rounded-t-lg" src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Foto - Foto\cargo ship.jpg"/>
 <div class="p-4 transition duration-300 hover:bg-yellow-50 hover:text-blue-900">
 <h3 class="text-xl font-bold mb-2">Container Ship</h3>
 <p class="text-sm mb-4">We provide highly skilled personnel to manage the complexities of containerized cargo shipping.</p>
@@ -362,7 +374,7 @@
 </div>
 <!-- Kartu 2 sampai 7 -->
 <div class="bg-white text-black rounded-lg shadow-lg overflow-hidden" data-aos="zoom-in">
-<img alt="Container Ship" class="w-full h-48 object-cover transition duration-300 ease-in-out transform hover:scale-105 hover:saturate-150 hover:brightness-110 rounded-t-lg" src="bulk carier.jpg"/>
+<img alt="Container Ship" class="w-full h-48 object-cover transition duration-300 ease-in-out transform hover:scale-105 hover:saturate-150 hover:brightness-110 rounded-t-lg" src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Foto - Foto\bulk carier.jpg"/>
 <div class="p-4">
 <h3 class="text-xl font-bold mb-2">Bulk Carrier</h3>
 <p class="text-sm mb-4">Our team supplies experienced crew for bulk carriers, handling the transportation of commodities.</p>
@@ -370,7 +382,7 @@
 </div>
 </div>
 <div class="bg-white text-black rounded-lg shadow-lg overflow-hidden" data-aos="zoom-in">
-<img alt="Container Ship" class="w-full h-48 object-cover transition duration-300 ease-in-out transform hover:scale-105 hover:saturate-150 hover:brightness-110 rounded-t-lg" src="Cement caier.jpg"/>
+<img alt="Container Ship" class="w-full h-48 object-cover transition duration-300 ease-in-out transform hover:scale-105 hover:saturate-150 hover:brightness-110 rounded-t-lg" src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Foto - Foto\Cement caier.jpg"/>
 <div class="p-4">
 <h3 class="text-xl font-bold mb-2">Cement Carrier</h3>
 <p class="text-sm mb-4">We ensure safe handling and transportation of these essential construction materials.</p>
@@ -378,7 +390,7 @@
 </div>
 </div>
 <div class="bg-white text-black rounded-lg shadow-lg overflow-hidden" data-aos="zoom-in">
-<img alt="Container Ship" class="w-full h-48 object-cover transition duration-300 ease-in-out transform hover:scale-105 hover:saturate-150 hover:brightness-110 rounded-t-lg" src="oil tanker ship.jpg"/>
+<img alt="Container Ship" class="w-full h-48 object-cover transition duration-300 ease-in-out transform hover:scale-105 hover:saturate-150 hover:brightness-110 rounded-t-lg" src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Foto - Foto\oil tanker ship.jpg"/>
 <div class="p-4">
 <h3 class="text-xl font-bold mb-2">Oil Tanker</h3>
 <p class="text-sm mb-4">Our team is equipped to manage the demanding operational requirements of oil tankers.</p>
@@ -386,7 +398,7 @@
 </div>
 </div>
 <div class="bg-white text-black rounded-lg shadow-lg overflow-hidden" data-aos="zoom-in">
-<img alt="Container Ship" class="w-full h-48 object-cover transition duration-300 ease-in-out transform hover:scale-105 hover:saturate-150 hover:brightness-110 rounded-t-lg" src="chemical ship.jpg"/>
+<img alt="Container Ship" class="w-full h-48 object-cover transition duration-300 ease-in-out transform hover:scale-105 hover:saturate-150 hover:brightness-110 rounded-t-lg" src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Foto - Foto\chemical ship.jpg"/>
 <div class="p-4">
 <h3 class="text-xl font-bold mb-2">Chemical Tanker</h3>
 <p class="text-sm mb-4">We provide specialized crews for chemical tankers, with a focus on safety and precision.</p>
@@ -394,7 +406,7 @@
 </div>
 </div>
 <div class="bg-white text-black rounded-lg shadow-lg overflow-hidden" data-aos="zoom-in">
-<img alt="Container Ship" class="w-full h-48 object-cover transition duration-300 ease-in-out transform hover:scale-105 hover:saturate-150 hover:brightness-110 rounded-t-lg" src="passenger ship.jpg"/>
+<img alt="Container Ship" class="w-full h-48 object-cover transition duration-300 ease-in-out transform hover:scale-105 hover:saturate-150 hover:brightness-110 rounded-t-lg" src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Foto - Foto\passenger ship.jpg"/>
 <div class="p-4">
 <h3 class="text-xl font-bold mb-2">Passenger Ship</h3>
 <p class="text-sm mb-4">Our team offers exceptional hospitality and safety services for passenger vessels.</p>
@@ -402,7 +414,7 @@
 </div>
 </div>
 <div class="bg-white text-black rounded-lg shadow-lg overflow-hidden" data-aos="zoom-in">
-<img alt="Container Ship" class="w-full h-48 object-cover transition duration-300 ease-in-out transform hover:scale-105 hover:saturate-150 hover:brightness-110 rounded-t-lg" src="tugboat.jpg"/>
+<img alt="Container Ship" class="w-full h-48 object-cover transition duration-300 ease-in-out transform hover:scale-105 hover:saturate-150 hover:brightness-110 rounded-t-lg" src="C:\Users\mohammad_nor\Downloads\PT BAHARI UNTUNG\Bahan\Foto - Foto\tugboat.jpg"/>
 <div class="p-4">
 <h3 class="text-xl font-bold mb-2">Tugboat</h3>
 <p class="text-sm mb-4">Our crew is experienced in tugboat operations, providing support to maneuver large vessels in port.</p>
@@ -428,7 +440,7 @@
 </div>
 </div>
 <section class="container mx-auto px-6 py-12 animate__animated animate__fadeInUp" data-aos="fade-up" id="struktur">
-<h2 class="text-3xl font-bold text-yellow-300 text-center mb-10">Struktur Organisasi</h2>
+<h2 class="text-3xl font-bold text-yellow-300 text-center mb-10 text-lg md:text-xl lg:text-2xl">Struktur Organisasi</h2>
 <div class="grid md:grid-cols-3 gap-6">
 <div class="bg-white bg-opacity-10 p-6 text-center rounded-lg border border-yellow-300">
 <img alt="Diana" class="w-24 h-24 rounded-full mx-auto mb-3 border-2 border-yellow-300" src="https://via.placeholder.com/150?text=Diana"/>
@@ -472,7 +484,7 @@
 </div>
 <!-- Galeri Crew -->
 <section class="container mx-auto px-6 py-12 animate__animated animate__fadeInUp" data-aos="zoom-in-up" id="galeri-crew">
-<h2 class="text-3xl font-bold text-yellow-300 text-center mb-10">Galeri Crew</h2>
+<h2 class="text-3xl font-bold text-yellow-300 text-center mb-10 text-lg md:text-xl lg:text-2xl">Galeri Crew</h2>
 <div class="swiper gallerySwiper">
 <div class="swiper-wrapper">
 <div class="swiper-slide"><img alt="Crew 1" class="rounded-lg border-4 border-yellow-400 cursor-pointer hover:scale-110 transition duration-300" onclick="openModal(this.src, this.alt)" src="https://via.placeholder.com/300x400?text=Crew+1"/></div>
@@ -504,7 +516,7 @@
 </div>
 <!-- Dashboard Crew -->
 <section class="container mx-auto px-6 py-12" data-aos="fade-up" id="dashboard">
-<h2 class="text-3xl font-bold text-yellow-300 text-center mb-6">Dashboard Crew</h2>
+<h2 class="text-3xl font-bold text-yellow-300 text-center mb-6 text-lg md:text-xl lg:text-2xl">Dashboard Crew</h2>
 <div class="flex flex-col md:flex-row items-center justify-between mb-6 gap-4">
 <button class="px-4 py-2 rounded bg-green-500 text-white font-semibold hover:bg-green-600" onclick="window.print()">Print</button>
 <button class="px-4 py-2 rounded bg-blue-500 text-white font-semibold hover:bg-blue-600" onclick="exportToCSV()">Export CSV</button>
@@ -556,7 +568,7 @@
 </div>
 <!-- Statistik Crew -->
 <section class="container mx-auto px-6 py-12 animate__animated animate__fadeInUp" data-aos="fade-up">
-<h2 class="text-3xl font-bold text-yellow-300 text-center mb-6">Statistik Crew</h2>
+<h2 class="text-3xl font-bold text-yellow-300 text-center mb-6 text-lg md:text-xl lg:text-2xl">Statistik Crew</h2>
 <p class="text-center text-white text-sm mb-6">Data crew aktif yang sudah diberangkatkan</p>
 <div class="text-center text-3xl font-bold text-yellow-400 animate-count" data-target="34">0</div>
 <canvas class="bg-white rounded-lg p-4" id="crewChart"></canvas>
@@ -566,7 +578,7 @@
 </div>
 <!-- Kalender Keberangkatan -->
 <section class="container mx-auto px-6 py-12" data-aos="fade-up">
-<h2 class="text-3xl font-bold text-yellow-300 text-center mb-6">Kalender Keberangkatan</h2>
+<h2 class="text-3xl font-bold text-yellow-300 text-center mb-6 text-lg md:text-xl lg:text-2xl">Kalender Keberangkatan</h2>
 <div class="bg-white rounded-lg p-4 text-black" id="calendar"></div>
 </section>
 <div class="w-full overflow-hidden">
@@ -574,12 +586,12 @@
 </div>
 <!-- Testimoni -->
 <section class="container mx-auto px-6 py-12" data-aos="fade-up">
-<h2 class="text-3xl font-bold text-yellow-300 text-center mb-10">Testimoni Crew</h2>
+<h2 class="text-3xl font-bold text-yellow-300 text-center mb-10 text-lg md:text-xl lg:text-2xl">Testimoni Crew</h2>
 <div class="grid md:grid-cols-2 gap-6">
 <blockquote class="bg-white bg-opacity-10 p-6 rounded-xl border border-yellow-300 text-white">
 <p class="italic">"Saya sangat puas bekerja sama dengan PT BUS. Penyalurannya cepat dan aman!"</p>
 <section class="container mx-auto px-6 py-12" data-aos="fade-up">
-<h2 class="text-3xl font-bold text-yellow-300 text-center mb-6">❓ Tanya Jawab (FAQ)</h2>
+<h2 class="text-3xl font-bold text-yellow-300 text-center mb-6 text-lg md:text-xl lg:text-2xl">❓ Tanya Jawab (FAQ)</h2>
 <div class="space-y-4 max-w-3xl mx-auto">
 <details class="bg-white bg-opacity-10 p-4 rounded-lg border border-yellow-300 text-white">
 <summary class="font-semibold cursor-pointer">Bagaimana proses perekrutan ABK?</summary>
@@ -599,7 +611,7 @@
 <svg viewbox="0 0 1440 320"><path d="M0,160L1440,320L1440,0L0,0Z" fill="#0f172a" fill-opacity="1"></path></svg>
 </div>
 <section class="container mx-auto px-6 py-12" data-aos="fade-up">
-<h2 class="text-3xl font-bold text-yellow-300 text-center mb-6">🤝 Mitra &amp; Klien Kami</h2>
+<h2 class="text-3xl font-bold text-yellow-300 text-center mb-6 text-lg md:text-xl lg:text-2xl">🤝 Mitra &amp; Klien Kami</h2>
 <div class="swiper partnerSwiper">
 <div class="swiper-wrapper">
 <div class="swiper-slide flex justify-center items-center"><img alt="Mitra 1" class="h-20" src="https://via.placeholder.com/150x80?text=Mitra+1"/></div>
@@ -632,24 +644,24 @@
     }
   });
 </script>
-
 <section class="container mx-auto px-6 py-16" data-aos="fade-right">
-<h2 class="text-4xl font-bold text-yellow-300 text-center mb-6">Tentang Kami</h2>
+<h2 class="text-4xl font-bold text-yellow-300 text-center mb-6 text-lg md:text-xl lg:text-2xl">Tentang Kami</h2>
 <p class="text-white text-lg max-w-3xl mx-auto text-center leading-relaxed">
     PT Bahari Untung Samudera adalah perusahaan pelayaran terpercaya yang telah melayani industri maritim dengan profesionalisme tinggi.
     Dengan komitmen terhadap <strong>kualitas</strong>, <strong>keselamatan</strong>, dan <strong>pengembangan SDM</strong>, kami siap mencetak pelaut unggul Indonesia untuk pasar global.
   </p>
 </section>
-
 <section class="container mx-auto px-6 py-16" data-aos="zoom-in">
-<h2 class="text-4xl font-bold text-yellow-300 text-center mb-8">Galeri Armada &amp; Kegiatan</h2>
+<h2 class="text-4xl font-bold text-yellow-300 text-center mb-8 text-lg md:text-xl lg:text-2xl">Galeri Armada &amp; Kegiatan</h2>
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 <img alt="Foto 1" class="rounded-lg shadow-md hover:scale-105 transition cursor-pointer" src="https://source.unsplash.com/400x300/?ship,1"/>
 <img alt="Foto 2" class="rounded-lg shadow-md hover:scale-105 transition cursor-pointer" src="https://source.unsplash.com/400x300/?crew,2"/>
 <img alt="Foto 3" class="rounded-lg shadow-md hover:scale-105 transition cursor-pointer" src="https://source.unsplash.com/400x300/?harbor,3"/>
 </div>
 </section>
-<footer class="mt-2 font-bold text-yellow-300">— Andi, ABK</footer>
+<div class="container mx-auto px-4 py-12 flex flex-col md:flex-row gap-6 justify-center items-start b g - g r a d i e n t - t o - b r f r o m - s l a t e - 8 0 0 t o - b l u e - 9 0 0 r o u n d e d - x l s h a d o w - x l">
+<div class="hidden md:block w-px bg-yellow-300 h-full mx-4"></div>
+</div><footer class="mt-2 font-bold text-yellow-300">— Andi, ABK</footer>
 </blockquote>
 <blockquote class="bg-white bg-opacity-10 p-6 rounded-xl border border-yellow-300 text-white">
 <p class="italic">"Prosesnya sangat profesional dan membantu dari awal sampai keberangkatan."</p>
@@ -662,7 +674,7 @@
 </div>
 <!-- Video Profil Perusahaan -->
 <section class="container mx-auto px-6 py-12" data-aos="fade-up">
-<h2 class="text-3xl font-bold text-yellow-300 text-center mb-6">Video Profil Perusahaan</h2>
+<h2 class="text-3xl font-bold text-yellow-300 text-center mb-6 text-lg md:text-xl lg:text-2xl">Video Profil Perusahaan</h2>
 <div class="aspect-w-16 aspect-h-9">
 <iframe allowfullscreen="" class="w-full h-64 rounded-lg border-4 border-yellow-400" frameborder="0" src="https://www.youtube.com/embed/Ea5gyOYD_pg?si=ZksTmT1upZIeXaXQ"></iframe>
 </div>
@@ -701,7 +713,7 @@
 </div>
 <!-- Kontak Section -->
 <section class="container mx-auto px-6 py-12 max-w-4xl" data-aos="fade-up" id="kontak">
-<h2 class="text-3xl font-bold mb-6 text-center text-yellow-300 drop-shadow">Kontak Kami</h2>
+<h2 class="text-3xl font-bold mb-6 text-center text-yellow-300 drop-shadow text-lg md:text-xl lg:text-2xl">Kontak Kami</h2>
 <div class="text-center mb-6">
 <p class="text-lg">📍 Alamat: Jalan.Ir, Juanda Kel Krandon,Kec Margadana ,Kota Tegal(52146)</p>
 <p class="text-lg">📞 Telepon: 0812-3456-7890</p>
